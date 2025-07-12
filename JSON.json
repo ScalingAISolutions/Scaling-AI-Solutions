@@ -1,8 +1,13 @@
 [
+  // =================== NEPQ SKILLS: OPTIN STAGE ===================
   {
     "type": "skill",
-    "group": "nepq_optin",
+    "stage": "optin",
     "order": 2,
+    "name": "Understand Current Situation",
+    "keywords": ["approach", "current", "doing", "handling", "how", "method", "process", "situation", "status", "workflow"],
+    "weight": 2,
+    "tag": "discovery",
     "content": {
       "tactics": "Ask neutral questions to understand their current situation.",
       "examples": [
@@ -14,8 +19,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_optin",
+    "stage": "optin",
     "order": 3,
+    "name": "Identify Light Friction",
+    "keywords": ["annoy", "blocker", "challenge", "delay", "frustration", "hassle", "obstacle", "pain", "problem", "roadblock", "slow", "tweak"],
+    "weight": 2,
+    "tag": "friction",
     "content": {
       "tactics": "Identify light friction without applying pressure.",
       "examples": [
@@ -27,8 +36,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_optin",
+    "stage": "optin",
     "order": 4,
+    "name": "Soft Reflection on Inaction",
+    "keywords": ["consequences", "delay", "downside", "hesitate", "inaction", "no change", "not changing", "postpone", "procrastinate", "wait"],
+    "weight": 3,
+    "tag": "inaction",
     "content": {
       "tactics": "Encourage soft reflection on the downsides of inaction.",
       "examples": [
@@ -40,8 +53,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_optin",
+    "stage": "optin",
     "order": 5,
+    "name": "Paint Ideal Outcome",
+    "keywords": ["change", "dream", "fix", "goal", "ideal", "outcome", "result", "success", "target", "vision"],
+    "weight": 3,
+    "tag": "outcome",
     "content": {
       "tactics": "Let them paint a picture of their ideal outcome.",
       "examples": [
@@ -53,8 +70,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_optin",
+    "stage": "optin",
     "order": 6,
+    "name": "Cost of Inaction",
+    "keywords": ["cost", "delay", "expensive", "investment", "loss", "missing", "price", "risk", "roi", "value", "wait", "worth"],
+    "weight": 4,
+    "tag": "cost",
     "content": {
       "tactics": "Subtly explore cost of inaction or delay.",
       "examples": [
@@ -66,8 +87,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_optin",
+    "stage": "optin",
     "order": 7,
+    "name": "Invite Next Step",
+    "keywords": ["demo", "explore", "how", "learn", "move forward", "next step", "progress", "see", "show", "try", "walkthrough"],
+    "weight": 2,
+    "tag": "cta",
     "content": {
       "tactics": "Invite next steps in a casual, low-pressure way.",
       "examples": [
@@ -77,10 +102,15 @@
       ]
     }
   },
+  // =================== NEPQ SKILLS: NOSHOW STAGE ===================
   {
     "type": "skill",
-    "group": "nepq_noshow",
+    "stage": "noshow",
     "order": 2,
+    "name": "Re-Establish Intent",
+    "keywords": ["booked", "curious", "goal", "interest", "intent", "inquire", "motivation", "purpose", "reason", "register", "why"],
+    "weight": 3,
+    "tag": "intent",
     "content": {
       "tactics": "Re-establish what they were hoping to learn or explore.",
       "examples": [
@@ -92,8 +122,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_noshow",
+    "stage": "noshow",
     "order": 3,
+    "name": "Explore No-Show Friction",
+    "keywords": ["cancel", "concern", "forgot", "miss", "no show", "reason", "reschedule", "skip", "unclear", "why"],
+    "weight": 3,
+    "tag": "friction",
     "content": {
       "tactics": "Explore friction or concerns that may have contributed to the no-show.",
       "examples": [
@@ -105,8 +139,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_noshow",
+    "stage": "noshow",
     "order": 4,
+    "name": "Surface Lingering Challenges",
+    "keywords": ["barrier", "challenge", "issue", "loop", "open", "pending", "problem", "still", "unresolved"],
+    "weight": 2,
+    "tag": "discovery",
     "content": {
       "tactics": "Surface lingering challenges or open loops they still want to solve.",
       "examples": [
@@ -118,8 +156,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_noshow",
+    "stage": "noshow",
     "order": 5,
+    "name": "Reconnect to Ideal Outcome",
+    "keywords": ["desire", "future", "goal", "ideal", "outcome", "path", "progress", "result", "vision", "what now"],
+    "weight": 3,
+    "tag": "outcome",
     "content": {
       "tactics": "Reconnect to the original desire or ideal outcome.",
       "examples": [
@@ -131,8 +173,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_noshow",
+    "stage": "noshow",
     "order": 6,
+    "name": "Reflect on Delay Cost",
+    "keywords": ["cost", "delay", "hold up", "missed", "momentum", "opportunity", "pause", "stuck", "waiting"],
+    "weight": 4,
+    "tag": "cost",
     "content": {
       "tactics": "Invite reflection on opportunity cost of continued delay.",
       "examples": [
@@ -144,8 +190,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_noshow",
+    "stage": "noshow",
     "order": 7,
+    "name": "Invite Next Step",
+    "keywords": ["circle back", "continue", "explore", "follow up", "move forward", "next", "revisit", "try again"],
+    "weight": 2,
+    "tag": "cta",
     "content": {
       "tactics": "Invite a next step while keeping the tone warm and no-pressure.",
       "examples": [
@@ -155,10 +205,15 @@
       ]
     }
   },
+  // =================== NEPQ SKILLS: FOLLOWUP STAGE ===================
   {
     "type": "skill",
-    "group": "nepq_followup",
+    "stage": "followup",
     "order": 2,
+    "name": "Re-Check State",
+    "keywords": ["changed", "current", "how are things", "progress", "shift", "state", "status", "update"],
+    "weight": 2,
+    "tag": "discovery",
     "content": {
       "tactics": "Re-check their current state with respect to the original pain or goal.",
       "examples": [
@@ -170,8 +225,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_followup",
+    "stage": "followup",
     "order": 3,
+    "name": "Dig Into Roadblocks",
+    "keywords": ["block", "challenge", "delay", "hesitate", "hold back", "problem", "roadblock", "timing", "unclear"],
+    "weight": 3,
+    "tag": "friction",
     "content": {
       "tactics": "Dig gently into what may have held them back or delayed progress.",
       "examples": [
@@ -183,8 +242,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_followup",
+    "stage": "followup",
     "order": 4,
+    "name": "Reflect on Motivation",
+    "keywords": ["desire", "frustrate", "motivation", "pain", "purpose", "solve", "urgent", "why", "worth"],
+    "weight": 2,
+    "tag": "motivation",
     "content": {
       "tactics": "Encourage reflection on why it still matters to solve the issue.",
       "examples": [
@@ -196,8 +259,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_followup",
+    "stage": "followup",
     "order": 5,
+    "name": "Re-Visualize Outcome",
+    "keywords": ["change", "future", "goal", "outcome", "result", "see", "vision", "visualize"],
+    "weight": 3,
+    "tag": "outcome",
     "content": {
       "tactics": "Re-visualize the desired outcome — especially if they paused progress.",
       "examples": [
@@ -209,8 +276,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_followup",
+    "stage": "followup",
     "order": 6,
+    "name": "Cost of Delay",
+    "keywords": ["consequence", "cost", "delay", "downside", "loss", "risk", "unresolved", "wait"],
+    "weight": 4,
+    "tag": "cost",
     "content": {
       "tactics": "Bring up what might be at stake by continuing to wait or stall.",
       "examples": [
@@ -222,8 +293,12 @@
   },
   {
     "type": "skill",
-    "group": "nepq_followup",
+    "stage": "followup",
     "order": 7,
+    "name": "Invite Partnership Action",
+    "keywords": ["action", "explore", "guide", "move forward", "next step", "now", "outline", "walk through"],
+    "weight": 2,
+    "tag": "cta",
     "content": {
       "tactics": "Invite action with a tone of partnership, not pressure.",
       "examples": [
@@ -232,5 +307,1962 @@
         "Want me to walk you through next steps?"
       ]
     }
+  },
+  // =================== UNIVERSAL "ANY STAGE" SOFTENER/SUPPORT SKILLS ===================
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Validate + Relate",
+    "keywords": ["common", "confused", "frustrated", "hesitant", "normal", "not sure", "overwhelmed", "relate", "stuck", "uncertain"],
+    "weight": 2,
+    "tag": "validation",
+    "content": {
+      "tactics": "Briefly validate their feeling or experience, then relate it to what others have felt or experienced to build instant trust and rapport.",
+      "examples": [
+        "Totally get where you’re coming from—others have said the same.",
+        "That’s more common than you’d think, honestly.",
+        "I hear that a lot—so you’re not alone.",
+        "Absolutely, a lot of people in your shoes felt this way at first."
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Micro-Recap / Reflection",
+    "keywords": ["clarify", "echo", "if I’m hearing you", "recap", "reflect", "repeat", "so what I hear", "summarize"],
+    "weight": 1,
+    "tag": "recap",
+    "content": {
+      "tactics": "Paraphrase or echo what the lead just shared to show active listening and build trust before moving forward.",
+      "examples": [
+        "So it sounds like you’re mostly frustrated with {{ pain_point }}, right?",
+        "If I’m hearing you right, the main thing is {{ summary }}?",
+        "You mentioned you’ve tried {{ previous_solution }} before—was that helpful?",
+        "Just to make sure I got it—you’re looking for more {{ desired_outcome }}?"
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Bridge to Next Step",
+    "keywords": ["based on", "continue", "given that", "move forward", "next question", "next step", "progress", "shift", "transition"],
+    "weight": 1,
+    "tag": "transition",
+    "content": {
+      "tactics": "Use gentle transitional phrases to move the conversation forward naturally—never abrupt.",
+      "examples": [
+        "Makes sense! Given that…",
+        "Got it—so based on what you’ve shared…",
+        "Okay, next question for you…",
+        "Appreciate you sharing that—let’s look at what’s next."
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Permission-Based Question",
+    "keywords": ["ask", "can I", "is it alright", "mind if", "permission", "respect", "would it be okay"],
+    "weight": 1,
+    "tag": "permission",
+    "content": {
+      "tactics": "Ask for permission before diving into the next topic, making the lead feel in control and respected.",
+      "examples": [
+        "Mind if I ask…?",
+        "Would it be okay if I shared…?",
+        "Can I get your take on one more thing?",
+        "Is it alright if we dig a bit deeper on that?"
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Casual Check-In",
+    "keywords": ["check in", "clarify", "details", "happy to", "lost", "pause", "slow", "unsure", "want more"],
+    "weight": 1,
+    "tag": "checkin",
+    "content": {
+      "tactics": "Lightly check for understanding or invite feedback if the lead is quiet, uncertain, or the conversation is slowing.",
+      "examples": [
+        "Just checking—did that make sense?",
+        "Let me know if you want more details, no rush.",
+        "Happy to pause or go deeper—totally up to you!",
+        "If you want to pivot or change focus, just say the word."
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Soft CTA / Invitation",
+    "keywords": ["call to action", "cta", "free", "if you’d like", "invite", "let me know", "offer", "schedule", "want"],
+    "weight": 2,
+    "tag": "cta",
+    "content": {
+      "tactics": "Frame all call-to-actions as an invitation or offer, not a demand—always low-pressure and opt-in.",
+      "examples": [
+        "If you want, I can send a quick example.",
+        "Want me to show you how that works?",
+        "If you’d find it helpful, I can share a checklist.",
+        "Totally up to you—happy to send more details if you want them."
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Preemptive Objection Diffusion",
+    "keywords": ["afraid", "complicated", "concern", "doubt", "hesitate", "objection", "pushback", "risk", "worry"],
+    "weight": 3,
+    "tag": "objection",
+    "content": {
+      "tactics": "Acknowledge and address common concerns before the lead raises them—shows experience, not pushiness.",
+      "examples": [
+        "A lot of people ask if this takes a ton of time—happy to explain.",
+        "If you’re wondering about pricing, that’s a common question—I can clarify.",
+        "By the way, you won’t get stuck with anything—you’re always in control.",
+        "If you’re worried this might be complicated, I can walk you through step-by-step."
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Soft Re-engagement",
+    "keywords": ["follow up", "ghost", "no reply", "pick this up", "re-engage", "silent", "still there", "touch base"],
+    "weight": 1,
+    "tag": "reengage",
+    "content": {
+      "tactics": "Gently revive the conversation if the lead goes silent, without pressure.",
+      "examples": [
+        "Still there? No worries if now’s not the best time. Just let me know!",
+        "Totally fine if you’re busy—I’m here when you’re ready.",
+        "Just wanted to check back in—happy to pick this up whenever works for you."
+      ]
+    }
+  },
+  {
+    "type": "skill",
+    "stage": "any",
+    "name": "Adaptive Discovery",
+    "keywords": ["automate", "challenge", "curiosity", "deep", "discover", "dig", "fix", "hold back", "manual", "pain", "problem", "uncover", "urgent", "what have you"],
+    "weight": 2,
+    "tag": "discovery",
+    "content": {
+      "tactics": "Ask deeper or follow-up questions to uncover pain, urgency, or decision criteria, especially after objectives are done and the lead keeps engaging.",
+      "examples": [
+        "What have you already tried to fix this?",
+        "If this actually worked, how would things be different for you in 30 days?",
+        "What’s holding you back from solving this now?",
+        "Out of curiosity, is this more of a lead issue—or a conversion issue?",
+        "If nothing changes, what’s the cost—time, money, or missed opportunities?",
+        "Are you currently doing this all manually—or using tools that aren’t quite cutting it?",
+        "Is this something you want fully handled—or just need support in one area?",
+        "What would a win look like for you in the next 2–4 weeks?",
+        "Have you been burned by agencies or tools before?",
+        "If you could automate one part of your process today, what would it be?"
+      ]
+    }
+  },
+
+  // =================== OBJECTION HANDLING, RULES, EXAMPLES, AVOIDS ===================
+  {
+    "type": "rule",
+    "id": "objection_handling_logic",
+    "content": {
+      "subtype": "objection_handling_logic",
+      "rule_summary": "Use Direct Rebuttals for clear objections, Prompt-Based Reframes for vague or passive hesitation.",
+      "fallback": "If unclear, default to Prompt-Based Reframe. Escalate to Direct Rebuttal if repeated or firm."
+    }
+  },
+  {
+    "type": "trigger",
+    "id": "direct_triggers",
+    "content": {
+      "mode": "direct",
+      "triggers": [
+        "too expensive",
+        "need to think",
+        "tried before",
+        "never heard"
+      ]
+    }
+  },
+  {
+    "type": "trigger",
+    "id": "prompt_triggers",
+    "content": {
+      "mode": "prompt",
+      "triggers": [
+        "not sure",
+        "just looking",
+        "maybe later",
+        "bit busy"
+      ]
+    }
+  },
+  {
+    "type": "example",
+    "id": "direct_example_1",
+    "content": {
+      "mode": "direct",
+      "lead": "It's too expensive",
+      "bot": "Totally get that. Want to see how this pays for itself?"
+    }
+  },
+  {
+    "type": "example",
+    "id": "direct_example_2",
+    "content": {
+      "mode": "direct",
+      "lead": "I’ve tried automation before, and it didn’t help.",
+      "bot": "Got it. This isn’t just follow-up reminders — it qualifies and books calls."
+    }
+  },
+  {
+    "type": "example",
+    "id": "prompt_example_1",
+    "content": {
+      "mode": "prompt",
+      "lead": "We're just looking for now.",
+      "bot": "Want to see how this compares to what you're doing now?"
+    }
+  },
+  {
+    "type": "example",
+    "id": "prompt_example_2",
+    "content": {
+      "mode": "prompt",
+      "lead": "Maybe later.",
+      "bot": "Want a quick example to help you decide?"
+    }
+  },
+  {
+    "type": "avoid",
+    "id": "objection_avoid",
+    "content": {
+      "list": [
+        "Don’t use rebuttals when prompting is enough",
+        "Don’t dismiss objections or concerns",
+        "Don’t guess — prompt instead",
+        "Don’t turn prompts into hard-sell statements"
+      ]
+    }
+  },
+  {
+    "type": "rule",
+    "id": "pricing_objection",
+    "keywords": [
+      "price",
+      "pricing",
+      "cost",
+      "how much",
+      "what does it cost"
+    ],
+    "content": {
+      "subtype": "pricing_objection",
+      "response": "Totally fair question—pricing is something we’ll walk you through on the call after you’ve experienced the product, seen how it works, and understand how we compare to other agencies. That way, it’s not just a number—it’s tied to real results that matter to you. Let’s get on a quick call so you can see how everything fits. [Insert booking link]",
+      "booking_link_required": true,
+      "override_all_other_rules": true
+    }
+  },
+  {
+    "type": "avoid",
+    "id": "pricing_objection",
+    "content": {
+      "subtype": "pricing_objection",
+      "list": [
+        "Share numbers, ranges, or estimates",
+        "Mention pricing tiers or past deals",
+        "Offer to 'follow up with a quote'",
+        "Reference discounts, free trials, or promotions",
+        "Extrapolate based on other clients"
+      ],
+      "example": {
+        "lead": "How much does it cost?",
+        "bot": "Totally fair question—pricing is something we’ll walk you through on the call after you’ve experienced the product..."
+      }
+    }
+  },
+
+  // =================== BUSINESS INFO (Core/Supporting/Background) ===================
+  {
+    "type": "info",
+    "id": "core",
+    "tag": "🔵",
+    "content": "Our program helps businesses automate lead follow-up, nurture, and booking using AI-powered workflows. Clients see 2–4x higher booking rates and faster response times."
+  },
+  {
+    "type": "info",
+    "id": "guarantee",
+    "tag": "🔵",
+    "content": "We guarantee you’ll see at least a 2x increase in booked calls—or we’ll work for free until you do."
+  },
+  {
+    "type": "info",
+    "id": "proof",
+    "tag": "🔵",
+    "content": "We’ve helped 200+ service businesses and agencies go from manual chasing to automated, 24/7 follow-up—with 100+ testimonials to prove it."
+  },
+  {
+    "type": "info",
+    "id": "pricing_detail",
+    "tag": "🟠",
+    "content": "Pricing is performance-based, with most clients paying only after results. No long-term contracts or hidden fees."
+  },
+  {
+    "type": "info",
+    "id": "platforms",
+    "tag": "🟠",
+    "content": "Works natively with GoHighLevel, Zapier, and all major CRMs—fully white-label and ready for agencies."
+  },
+  {
+    "type": "info",
+    "id": "security",
+    "tag": "🟡",
+    "content": "Data is processed on US/EU-based servers with full encryption, compliance, and strict privacy policies for all clients and leads."
+  },
+  {
+    "type": "info",
+    "id": "background",
+    "tag": "🟡",
+    "content": "Our founders scaled multiple agencies and SaaS products—now we help others automate their pipelines and double their revenue with less effort."
+  },
+
+  // =================== OBJECTIVES (Per Stage) ===================
+  {
+    "type": "objective",
+    "stage": "optin",
+    "order": 1,
+    "content": "Title: Identify Pain Points\nShort Description: Ask the lead an open-ended question to uncover their current struggles or pain points. Keep the tone friendly and helpful, and position it as a way to better understand how you can support them.\nExtra Prompt: Prompt them to share any other challenges, concerns, or roadblocks they’re facing. Acknowledge their response and offer helpful insight so they feel heard, understood, and guided toward a solution.\nSettings: GATHER"
+  },
+  {
+    "type": "objective",
+    "stage": "optin",
+    "order": 2,
+    "content": "Title: Connect to Outcome\nShort Description: Tie their pain point to a tangible outcome our service helps achieve — show the benefit, not just the features.\nExtra Prompt: Acknowledge the pain point they’ve shared. Then, offer a relevant outcome-based solution that shows how we solve that exact issue. Frame the benefit in terms of [Insert client’s outcome] — so they feel heard, understood, and confident there's a clear path forward.\nSettings: POSITION"
+  },
+  {
+    "type": "objective",
+    "stage": "optin",
+    "order": 3,
+    "content": "Title: Book a Call to Explore Fit\nShort Description: Guide the lead to book a call, framed as a collaborative exploration.\nExtra Prompt: Let them know the call is casual and designed to explore if it’s a mutual fit. Include the call link only when the conversation feels warm or they express curiosity. Use natural phrasing and embed the token: {{ custom_values.sales_call_booking_link }}. Emphasize that it’s optional and designed to provide clarity.\nSettings: GATHER"
+  },
+  {
+    "type": "objective",
+    "stage": "optin",
+    "order": 4,
+    "content": "Title: Deep Dive Discovery\nShort Description: Use this phase to uncover the lead’s deeper motivations through thoughtful, curiosity-based questions.\nExtra Prompt: Begin this deep-dive phase once rapport is built or the conversation becomes more open. Ask open-ended, emotionally aware questions to uncover what’s driving their interest, what success means to them, and what could happen if nothing changes. Keep the tone natural and curious. Even if responses are short or vague, continue the thread.\nSettings: GATHER"
+  },
+  {
+    "type": "objective",
+    "stage": "optin",
+    "order": 5,
+    "content": "Title: Fallback: Reopen or Clarify\nShort Description: If the lead becomes unresponsive or gives vague replies after Priority 3 or 4, send one soft message to check in, clarify where they stand, or leave the door open for later.\nExtra Prompt: Use only if the lead has not replied after outcome or CTA prompts, or gives vague answers (e.g., “not sure,” “thinking about it”). Do not send if the lead is actively replying or asking questions. Send a single, low-pressure message that checks in, offers clarity if needed, and lets them know you're here when they’re ready. Avoid urgency, repetition, or escalation. Only send this once.\nSettings: GATHER"
+  },
+  {
+    "type": "objective",
+    "stage": "booked",
+    "order": 1,
+    "content": "Title: Pre-Call Reassurance\nShort Description: Ask if the lead has seen the pre-call materials, then share the links in a friendly way — even if they say yes.\nExtra Prompt: After booking, ask if the lead has had a chance to check out the walkthrough content. Even if they say yes or aren’t sure, go ahead and share the links below. Frame them as optional and available for review: Intro Video: {{ custom_values.vsl_link }}, Pre-Call Prep Video: {{ custom_values.pre_call_video_link }}, Overview/Website: {{ custom_values.funnel_link }}. Only send all three links once unless requested again.\nSettings: REASSURE"
+  },
+  {
+    "type": "objective",
+    "stage": "noshow",
+    "order": 1,
+    "content": "Title: Acknowledge & Identify Why They Missed\nShort Description: Use empathy and a light, curiosity-driven question to uncover why the lead missed or canceled the call. Avoid assumptions and keep the tone friendly and pressure-free.\nExtra Prompt: Acknowledge the missed call in a friendly tone — without blame or pressure. Ask a relaxed, open-ended question to explore what happened (e.g., timing, uncertainty, or something else). Your goal is to keep the conversation human, supportive, and easy to respond to.\nSettings: GATHER"
+  },
+  {
+    "type": "objective",
+    "stage": "noshow",
+    "order": 2,
+    "content": "Title: Send Reschedule Link\nShort Description: If the lead is open to continuing, offer the reschedule link with encouragement and flexibility. Rebuild momentum without pressure.\nExtra Prompt: If the lead seems open to rebooking — or responds positively after you acknowledge the missed call — send the reschedule link: {{ custom_values.reschedule_link_ai_client }}. Keep the tone friendly and flexible. Present it as an easy next step if they’re still interested. Never pressure or follow up too aggressively.\nSettings: GIVE"
+  },
+  {
+    "type": "objective",
+    "stage": "noshow",
+    "order": 3,
+    "content": "Title: Soft Urgency Follow-Up\nShort Description: Add light urgency without pressure.\nExtra Prompt: Mention that slots are limited or that we’re wrapping this intake round soon. This works best after at least one other attempt to rebook has been made. Keep it soft and optional.\nSettings: NUDGE"
+  },
+  {
+    "type": "objective",
+    "stage": "followup",
+    "order": 1,
+    "content": "Title: Engage & Qualify\nShort Description: Reopen the conversation and reassess where the lead currently stands.\nExtra Prompt: Start with a warm, open-ended question to check where the lead is at right now — what they’re focused on, what’s changed, or what they may still be unsure about. Avoid assumptions. Let them guide the direction of the reply.\nSettings: GATHER"
+  },
+  {
+    "type": "objective",
+    "stage": "followup",
+    "order": 2,
+    "content": "Title: Reconnect to Value\nShort Description: After the lead shares their challenge or hesitation, briefly reflect it and tie it back to a helpful solution or outcome your service provides.\nExtra Prompt: Acknowledge what they shared. Tie their situation to a benefit like saving time, better results, or improved clarity. Keep it casual and consultative — not pitchy.\nSettings: GIVE"
+  },
+  {
+    "type": "objective",
+    "stage": "followup",
+    "order": 3,
+    "content": "Title: Maximize Every Touch\nShort Description: Treat every reply as an opportunity to guide toward action, even subtly. Be clear, helpful, and value-focused.\nExtra Prompt: If the lead is re-engaged or shows curiosity, offer a soft CTA to book a call using {{ custom_values.sales_call_booking_link }}. Keep the tone relaxed and respectful.\nSettings: GIVE"
+  },
+  {
+    "type": "objective",
+    "stage": "followup",
+    "order": 4,
+    "content": "Title: Deep Dive Discovery\nShort Description: Use this phase to re-engage the lead and uncover deeper motivations or concerns that may be holding them back.\nExtra Prompt: Ask open-ended, emotionally aware questions to explore their current goals, roadblocks, or timing concerns. Keep the tone helpful and human. Even if replies are short or vague, continue the thread without pushing.\nSettings: GATHER"
+  },
+  {
+    "type": "objective",
+    "stage": "followup",
+    "order": 5,
+    "content": "Title: Fallback: Check-In & Pause\nShort Description: If the lead hasn’t replied after value or deep-dive responses — or gives unclear signals — send one final check-in that leaves space without pressure.\nExtra Prompt: Use only if the lead has disengaged or responded vaguely multiple times without follow-up. Send a soft, one-time message to check in and offer to revisit when the timing is right. Avoid repeating CTAs.\nSettings: GATHER"
+  },
+
+  // =================== MACRO PROMPTS (Per Stage) ===================
+  {
+    "type": "macro_prompt",
+    "stage": "opt_in",
+    "content": "The lead submitted their info after seeing an AI-powered sales system. They’re likely interested in scaling, reducing acquisition costs, or improving follow-up.\n\nYour role is to engage naturally, ask focused questions, understand their goals, and help them evaluate if the offer is a good fit.\n\nBe warm, curious, and helpful — like a real team member. Keep replies short and human. Aim to book a strategy call when appropriate. Don’t promise email follow-ups. All interaction stays in the bot.\n\nOnly use the content provided. Do not assume or infer anything beyond what you've received."
+  },
+  {
+    "type": "macro_prompt",
+    "stage": "booked",
+    "content": "The lead booked a call after learning about this business’s offer. They’re likely aiming to scale faster, improve follow-up, or reduce lead costs.\n\nYour role is to reinforce the value of the upcoming call, explore their pain points, and help them feel confident about what to expect. Encourage them to check out the funnel, VSL, and pre-call video so they get the most value from the conversation.\n\nRespond like a helpful, encouraging team member. Be upbeat, clear, and human. Reinforce their decision to book. Help them feel prepared. Keep replies short. Do not promise email follow-ups. All interaction stays in the bot.\n\nOnly use the content provided. Do not assume or infer anything beyond what you've received."
+  },
+  {
+    "type": "macro_prompt",
+    "stage": "no_show",
+    "content": "The lead booked a strategy call but missed or canceled it. They originally showed interest in improving results, scaling, or reducing acquisition costs.\n\nYour role is to re-engage them, understand any blockers, and guide them to reschedule so they don’t miss the value this business can provide.\n\nRespond with empathy and a helpful tone. Acknowledge the missed call, reinforce the value of the conversation, and make it easy to reschedule. Ask follow-up questions to uncover any concerns. Keep replies short. Do not promise email follow-ups. All interaction stays in the bot.\n\nOnly use the content provided. Do not assume or infer anything beyond what you've received."
+  },
+  {
+    "type": "macro_prompt",
+    "stage": "follow_up",
+    "content": "The lead booked a call after showing interest in improving results, but wasn’t ready to buy. This follow-up is a chance to check in, understand their decision process, and rebuild momentum.\n\nYour role is to assess where they stand, surface pain points, and build trust. If they’ve gone cold, offer helpful context and nudge them back by sharing the funnel or VSL.\n\nBe respectful, conversational, and persistent—not pushy. Ask open-ended questions about their situation. If they’re interested, share the booking link again. Keep replies short. Do not promise email follow-ups. All interaction stays in the bot.\n\nOnly use the content provided. Do not assume or infer anything beyond what you've received."
+  },
+  {
+    "type": "link",
+    "purpose": "Primary video sales letter (VSL) used to educate prospects about the full offer, demonstrate key features and benefits, and showcase the transformation or outcome they can expect. This link should be provided when a lead asks for a detailed overview, wants to know how the solution works, or requests a single source of truth about what is included. It’s also used to warm up leads who are new or need an anchor explanation.",
+    "content": "vsl_link"
+  },
+  {
+    "type": "link",
+    "purpose": "Testimonial or case study video designed specifically to build social proof, trust, and credibility with skeptical leads. Use this link when a prospect asks for proof, wants to see real client results, expresses doubt, or needs reassurance that others have succeeded with this solution. Also effective for overcoming objections and for use during objection handling sequences.",
+    "content": "testimonial_video"
+  },
+  {
+    "type": "link",
+    "purpose": "Dedicated program or offer information page giving an in-depth breakdown of the service or product. Share this link if the lead requests specifics about deliverables, timelines, packages, pricing structure, features, service tiers, or wants to compare different options. This resource is also useful for answering technical or detail-oriented questions.",
+    "content": "program_details"
+  },
+  {
+    "type": "link",
+    "purpose": "Onboarding, preparation, or walkthrough video provided to leads before their call, meeting, or onboarding. This link helps set expectations, guide the prospect on what to prepare or bring, and answers common questions about the process. Use this link when the lead asks, 'What happens next?' or needs clarity on what to expect before taking the next step.",
+    "content": "pre_call_video_link"
+  },
+  {
+    "type": "link",
+    "purpose": "Direct checkout or payment link sent to leads who are ready to enroll, sign up, or make a purchase. Use this link when a prospect verbally commits, asks for a way to pay, or requests instructions on how to complete their purchase or enrollment online. This link should only be shared at the buying or close step.",
+    "content": "checkout"
+  },
+  {
+    "type": "link",
+    "purpose": "Universal calendar booking link for scheduling, rescheduling, or confirming a call, strategy session, or product demo. Use this link whenever a lead is ready to book time, missed a previous appointment, asks for your availability, or requests to speak with a team member. Can be used at any step where progressing to a live conversation or follow-up is appropriate.",
+    "content": "sales_call_booking_link"
+ },
+  {
+    "type": "info",
+    "tags": ["✨", "🎯", "🔵", "🟠", "🟡"],
+    "keywords": [
+      "Scaling AI Solutions", "business growth", "high-intent paid advertising", "AI automation",
+      "lead qualification", "follow-ups", "customer engagement", "business acceleration"
+    ],
+    "content": "Scaling AI Solutions accelerates business growth using high-intent paid advertising and AI automation, optimizing lead qualification, follow-ups, and customer engagement."
+  },
+  {
+    "type": "info",
+    "tags": ["✨", "🎯", "🔵", "🟠", "🔍"],
+    "keywords": [
+      "conversion enhancement", "major platforms", "CRM automation", "AI-powered sales", "AI-powered support",
+      "cross-platform integration"
+    ],
+    "content": "Solutions enhance conversions across every major platform by integrating CRM automation with AI-powered sales and support."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡"],
+    "keywords": [
+      "expertise", "lead generation", "conversion optimization", "sales automation", "scaling", "businesses", "efficiency"
+    ],
+    "content": "Expertise includes lead generation, conversion optimization, and sales automation to help businesses scale efficiently."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔵", "🟡"],
+    "keywords": [
+      "ad spend", "70 niches", "AI-driven strategies", "client acquisition", "sales", "customer service", "proven results"
+    ],
+    "content": "Managed over $30 million in ad spend across more than 70 niches, using AI-driven strategies to drive client acquisition, sales, and customer service."
+  },
+  {
+    "type": "info",
+    "tags": ["✨", "🎯", "🔵", "🟠", "🔍"],
+    "keywords": [
+      "lead generation", "conversion", "paid ad campaigns", "AI-powered CRM automation",
+      "multi-channel engagement strategies", "streamlined process", "optimization"
+    ],
+    "content": "Lead generation and conversion are streamlined through high-intent paid ad campaigns, AI-powered CRM automation, and multi-channel engagement strategies."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡", "🕓"],
+    "keywords": [
+      "AI agents", "qualify leads", "follow-ups", "nurture sales prospects", "maximize conversions",
+      "reduce manual work", "24/7 engagement", "automation"
+    ],
+    "content": "AI agents qualify leads, perform follow-ups, and nurture sales prospects 24/7 to maximize conversions and reduce manual work."
+  },
+  {
+    "type": "info",
+    "tags": ["✨", "🔵", "🟠", "🔍", "🎯"],
+    "keywords": [
+      "WOCCA method", "Who Offer Copy Creatives Action", "sales funnel optimization", "high ROI", "proprietary process", "conversion", "campaign design"
+    ],
+    "content": "Proprietary WOCCA method (Who, Offer, Copy, Creatives, Action) optimizes every step of the sales funnel and ensures high ROI."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡", "🕓"],
+    "keywords": [
+      "AI-powered customer support", "advanced sales automation", "effortless scaling",
+      "engagement", "readiness to convert", "business clients"
+    ],
+    "content": "Business clients receive AI-powered customer support and advanced sales automation, enabling effortless scaling and maintaining engagement and readiness to convert."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🔍", "🟡"],
+    "keywords": [
+      "CRM systems", "AI automation", "calling agents", "texting agents", "qualify leads",
+      "nurture prospects", "drive bookings", "social channels", "maximize conversion rates"
+    ],
+    "content": "CRM systems are enhanced with AI automation; calling and texting agents qualify leads, nurture prospects, and drive bookings across all social channels, maximizing conversion rates."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🔵"],
+    "keywords": [
+      "AI texting agents", "AI calling agents", "setters", "sales roles", "custom assignment", "niche-specific", "role flexibility"
+    ],
+    "content": "Both AI texting and calling agents are provided and can be assigned as setters or sales roles based on niche."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🕓", "🔍"],
+    "keywords": [
+      "AI", "instant responses", "24/7", "context-aware", "social media", "consistent follow-up engagement", "real-time engagement"
+    ],
+    "content": "AI delivers instant, 24/7 context-aware responses across social media, ensuring consistent follow-up engagement."
+  },
+  {
+    "type": "info",
+    "tags": ["✨", "🔵", "🎯", "🟠", "🕓"],
+    "keywords": [
+      "paid ads package", "high-intent lead generation", "targeted ad campaigns",
+      "ideal audiences", "biweekly performance reports", "continuous optimization"
+    ],
+    "content": "Paid ads package provides high-intent lead generation, targeted ad campaigns to attract and convert ideal audiences, and biweekly performance reports for continuous optimization."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯", "🔵"],
+    "keywords": [
+      "WOCCA framework", "customer profile refinement", "Grand Slam strategy", "ad copy", "CTR-optimized creatives", "action-driven funnel", "maximize ROI", "minimal effort"
+    ],
+    "content": "WOCCA framework refines the ideal customer profile, offer (using “Grand Slam” strategy), ad copy, CTR-optimized creatives, and action-driven funnel design to maximize ROI with minimal effort."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🎯", "🟠", "🔵"],
+    "keywords": [
+      "biweekly performance reports", "progress tracking", "optimize results", "reporting", "analytics"
+    ],
+    "content": "Biweekly performance reports included to track progress and optimize results."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🔵", "🕓"],
+    "keywords": [
+      "customer experience", "AI-powered texting", "AI-powered calling agents",
+      "handle inquiries", "basic support", "sales", "free up business owners", "growth focus"
+    ],
+    "content": "Customer experience enhanced by AI-powered texting and calling agents that handle inquiries, basic support, and sales, freeing business owners to focus on growth."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍", "🟡"],
+    "keywords": [
+      "AI", "instant responses", "FAQs", "troubleshooting requests", "guided solutions", "customer support"
+    ],
+    "content": "AI provides instant responses to FAQs, troubleshooting requests, and guided solutions."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🎯", "🟠", "🕓"],
+    "keywords": [
+      "AI", "close low-ticket deals", "setter", "high-ticket opportunities", "seamless engagement", "customer interactions"
+    ],
+    "content": "AI can close low-ticket deals and act as a setter for high-ticket opportunities to ensure seamless engagement across customer interactions."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔵", "🟡"],
+    "keywords": [
+      "Scaling AI Solutions", "Google", "Meta", "Pinterest", "TikTok", "YouTube", "ad campaign management", "partnerships"
+    ],
+    "content": "Scaling AI Solutions is partnered with Google, Meta, Pinterest, TikTok, and YouTube for ad campaign management."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯"],
+    "keywords": [
+      "WOCCA method", "high-converting ads", "audience identification", "qualified prospects", "marketing alignment"
+    ],
+    "content": "WOCCA method for creating high-converting ads starts with identifying and understanding the right audience to ensure marketing efforts align with the most qualified prospects."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯"],
+    "keywords": [
+      "audience research", "buyer personas", "targeting", "campaign performance", "increased engagement", "higher conversions"
+    ],
+    "content": "In-depth audience research and detailed buyer personas enhance targeting and campaign performance, increasing engagement and conversions."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔍", "🟠", "🟡"],
+    "keywords": [
+      "offers", "effectiveness", "Alex Hormozi", "methodology", "market research", "competitive analysis", "client pain points", "offer optimization"
+    ],
+    "content": "Offers optimized for maximum effectiveness using Alex Hormozi’s methodology, market research, competitive analysis, and a deep understanding of client pain points."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔵", "🟠"],
+    "keywords": [
+      "offer", "best solution", "outperform competitors", "positioning", "competitive advantage"
+    ],
+    "content": "The offer is positioned as the best solution to outperform competitors."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵", "🔍"],
+    "keywords": [
+      "ad copy", "persuasive", "outcome-oriented", "hooks", "headlines", "calls to action", "low cost per lead", "maximize response rates"
+    ],
+    "content": "Ad copy is written to be persuasive and outcome-oriented, optimizing hooks, headlines, and calls to action to maintain a low cost per lead and maximize response rates."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍", "🟡"],
+    "keywords": [
+      "custom-designed creatives", "conversion frameworks", "engagement", "audience psychology", "above-average click-through rates", "higher lead quality", "lower ad costs"
+    ],
+    "content": "Custom-designed creatives use conversion frameworks to boost engagement, align with audience psychology, and achieve above-average click-through rates, resulting in higher lead quality and lower ad costs."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🔍"],
+    "keywords": [
+      "funnel tailoring", "industry", "intent level", "high-intent prospects", "call funnels", "education", "trust-driven industries", "structured booking funnels"
+    ],
+    "content": "Each funnel tailored to industry and intent level, with high-intent prospects directed to immediate call funnels and education/trust-driven industries guided through structured booking funnels."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🔵", "🎯"],
+    "keywords": [
+      "AI agents", "convert leads", "book calls", "nurture prospects", "continuous engagement", "never miss leads", "engage cold prospects", "long-term nurturing"
+    ],
+    "content": "AI agents convert leads, book calls, and nurture prospects continuously, ensuring leads are never missed and cold prospects are engaged for months."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔵", "🟠"],
+    "keywords": [
+      "AI", "book calls", "qualified prospects", "no manual intervention", "booking automation"
+    ],
+    "content": "AI books calls with qualified prospects without manual intervention."
+  },
+  {
+    "type": "info",
+    "tags": ["🟡", "🎯", "🕓", "🔍"],
+    "keywords": [
+      "21 touchpoints", "lead qualification", "sales teams", "follow-up frequency", "ignored leads", "wasted ad spend"
+    ],
+    "content": "It takes over 21 touchpoints to get a lead on the phone, but most sales teams only follow up five to six times, leaving cold leads ignored and wasting ad spend."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI", "persistent follow-up", "nurtures prospects", "ready to convert", "lead retention", "engagement", "no neglected leads"
+    ],
+    "content": "AI persistently follows up and nurtures until prospects are ready to convert, ensuring no lead is lost or neglected."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🕓"],
+    "keywords": [
+      "AI", "follow-up management", "sales teams", "focus on closing", "task automation"
+    ],
+    "content": "AI manages all follow-up, so sales teams can focus on closing."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡", "🔍"],
+    "keywords": [
+      "system", "CRM sync", "lead stage updates", "tagging", "trigger actions", "engagement", "after hours", "weekends"
+    ],
+    "content": "System syncs with CRMs, updates lead stages, applies tags, triggers actions, and ensures engagement even after hours or on weekends."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🕓"],
+    "keywords": [
+      "messaging", "dynamic adaptation", "lead responses", "objection handling", "multi-channel nurturing", "SMS", "voice", "email"
+    ],
+    "content": "Messaging adapts dynamically to lead responses; objections handled intelligently; multi-channel nurturing across SMS, voice, and email for maximum effect."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI", "recycle leads", "revive cold leads", "instant notifications", "scheduling", "reminders", "lead routing", "balanced distribution"
+    ],
+    "content": "AI recycles and revives cold leads, sends instant notifications when a lead is ready, handles scheduling and reminders, and routes leads for balanced distribution."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯", "🟡"],
+    "keywords": [
+      "AI", "sales team efficiency", "multiply by five", "no replacement", "productivity boost"
+    ],
+    "content": "AI multiplies sales team efficiency by five without replacing them."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🔍", "🟡"],
+    "keywords": [
+      "AI-powered automation", "Facebook", "Instagram", "Google Reviews", "YouTube", "WhatsApp", "SMS", "DMs", "reviews", "engage leads", "omnichannel"
+    ],
+    "content": "AI-powered automation extends to Facebook, Instagram, Google Reviews, YouTube, WhatsApp, SMS, and more, responding to posts, comments, DMs, and reviews to engage leads wherever they are."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔵", "🟠", "🕓"],
+    "keywords": [
+      "high-ticket sales", "AI", "high-converting sales funnels", "lead warming", "unique selling points", "conversion rate increase", "no manual setters"
+    ],
+    "content": "For high-ticket sales, AI builds high-converting sales funnels, warms up leads, strengthens offers and pitch with unique selling points, and increases conversion rates without reliance on manual setters."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🔵", "🟠"],
+    "keywords": [
+      "AI", "never miss follow-up", "scale appointments", "no additional headcount", "sales team turnover", "poor follow-up solution"
+    ],
+    "content": "AI never misses a follow-up and scales appointments without additional headcount, addressing sales team turnover and poor follow-up."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🔵", "🔍"],
+    "keywords": [
+      "customer support automation", "AI", "instant answers", "FAQs", "appointment management", "order updates", "billing assistance", "churn risk detection", "loyalty incentives", "multi-channel support", "chat", "SMS", "email", "social"
+    ],
+    "content": "Customer support is automated with AI providing instant answers to FAQs, managing appointments, sending order updates, assisting with billing, detecting churn risk, offering loyalty incentives, and delivering multi-channel support across chat, SMS, social, and email."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🎯", "🟠", "🔍"],
+    "keywords": [
+      "AI sales capabilities", "qualifying leads", "booking calls", "nurturing prospects", "price objections", "timing objections", "payment processing", "real-time insights", "payment links", "recover lost leads"
+    ],
+    "content": "AI sales capabilities include qualifying leads, booking and confirming calls, nurturing prospects, handling price and timing objections, processing payments, providing real-time insights, sending payment links, and recovering lost leads."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡"],
+    "keywords": [
+      "AI", "lead transfer", "human sales reps", "escalation", "hybrid process"
+    ],
+    "content": "AI transfers leads to human sales reps when required."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🎯"],
+    "keywords": [
+      "subscription-based service", "no setup fees", "no upfront costs", "start anytime", "stop anytime", "flexibility", "cost structure"
+    ],
+    "content": "Subscription-based service with no setup fees or upfront costs; can be started or stopped at any time."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🕓", "🔵"],
+    "keywords": [
+      "faster lead responses", "higher booking rates", "qualified calls", "1–2 weeks", "quick results", "performance metrics"
+    ],
+    "content": "Most businesses see faster lead responses, higher booking rates, and more qualified calls within 1–2 weeks of implementation."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🟡", "🎯"],
+    "keywords": [
+      "AI", "persistent follow-up", "cold leads", "old leads", "re-engagement", "pipeline", "follow-up strategy"
+    ],
+    "content": "AI provides persistent follow-up, nurtures cold and old leads, and brings unresponsive prospects back into the pipeline."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🕓"],
+    "keywords": [
+      "onboarding", "fast setup", "24–48 hours", "managed onboarding", "ongoing optimization", "expert support"
+    ],
+    "content": "Onboarding is fast, managed, and completed within 24–48 hours; ongoing optimization and expert support included."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔵", "🟡"],
+    "keywords": [
+      "businesses", "save time", "10–20 hours per week", "manual follow-up elimination", "appointment scheduling", "AI handles repetitive work"
+    ],
+    "content": "Businesses save 10–20 hours per week by eliminating manual follow-up and appointment scheduling; AI handles all repetitive work."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔵", "🟡", "🕓"],
+    "keywords": [
+      "AI", "never sleeps", "never forgets a lead", "instant response", "engaged prospects", "qualified prospects", "human closers"
+    ],
+    "content": "AI never sleeps or forgets a lead, responds instantly, and ensures only engaged, qualified prospects are handed to human closers."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🔍", "🔵"],
+    "keywords": [
+      "AI", "customizable", "industry adaptation", "offer adaptation", "sales strategy", "response adaptation", "engagement history", "contextual adaptation"
+    ],
+    "content": "AI fully customizable to match industry, offer, and sales strategy, adapting responses to engagement history and context."
+  },
+  {
+    "type": "info",
+    "tags": ["🟡", "🔵", "🟠", "🔍"],
+    "keywords": [
+      "lead generation", "nurturing", "booked appointments", "coaching", "real estate", "home services", "high-ticket sales", "B2B", "healthcare", "SaaS", "industry-agnostic"
+    ],
+    "content": "Any industry that relies on lead generation, nurturing, and booked appointments—including coaching, real estate, home services, high-ticket sales, B2B, healthcare, and SaaS—can use this solution."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "performance analytics", "engagement", "bookings", "conversions", "response rates", "reporting"
+    ],
+    "content": "Performance analytics included for all engagement, bookings, conversions, and response rates."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "AI", "multiple languages", "TCPA compliance", "GDPR compliance", "HIPAA compliance", "data encryption", "data security", "privacy"
+    ],
+    "content": "AI supports multiple languages, complies with TCPA, GDPR, and HIPAA, encrypts all data, and never stores sensitive personal information."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍", "🟡"],
+    "keywords": [
+      "appointment booking", "rescheduling", "AI management", "Google Calendar", "Outlook", "GoHighLevel", "scheduling tools", "integration"
+    ],
+    "content": "All appointment booking and rescheduling is managed by AI, which syncs with Google Calendar, Outlook, GoHighLevel, and other scheduling tools."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🔍"],
+    "keywords": [
+      "double-booking prevention", "live availability", "group calls", "webinars", "scheduling flexibility"
+    ],
+    "content": "Double-booking is prevented by syncing with live availability; group calls or webinars can be scheduled based on need."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🟡"],
+    "keywords": [
+      "AI", "continuous learning", "engagement improvement", "response optimization", "machine learning"
+    ],
+    "content": "AI continually learns from engagement and improves its responses over time."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🟡", "🔍"],
+    "keywords": [
+      "no-shows", "cancellations", "rescheduling", "smart tagging", "CRM tracking", "attendance"
+    ],
+    "content": "No-shows and cancellations are followed up with rescheduling options and smart tagging for CRM tracking."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI", "reminders", "expiring offers", "instant notifications", "high-intent lead alerts", "urgency", "team alerts"
+    ],
+    "content": "AI sends reminders for expiring offers and notifies teams instantly when a lead is identified as high-intent."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🎯"],
+    "keywords": [
+      "pilot programs", "testing", "full implementation", "pre-launch validation"
+    ],
+    "content": "Solution is tested with pilot programs before full implementation."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔵", "🟠", "🕓"],
+    "keywords": [
+      "company guarantee", "increased response rates", "booked calls", "streamlined sales", "results assurance"
+    ],
+    "content": "Company guarantees increased response rates, booked calls, and streamlined sales, and will work with clients until results are achieved."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🔵"],
+    "keywords": [
+      "AI", "follow-up", "SMS", "email", "calls", "objection handling", "reminders", "continued engagement", "booking", "opt-out management"
+    ],
+    "content": "AI follows up via SMS, email, and calls, addresses objections, sends reminders, and continues engagement until a lead books or opts out."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "AI", "revives cold leads", "nurtures prospects", "dynamic engagement", "objection handling", "long-term follow-up"
+    ],
+    "content": "AI revives cold leads, nurtures prospects for months, and adapts dynamically based on engagement and objections."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍", "🕓"],
+    "keywords": [
+      "follow-up messaging", "sequencing", "outreach frequency", "customizable", "AI performance tracking", "detailed reporting"
+    ],
+    "content": "All follow-up messaging, sequencing, and outreach frequency is customizable; AI performance can be tracked in detail."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🔵"],
+    "keywords": [
+      "AI", "escalate to human", "lead transfer", "complex questions", "human support"
+    ],
+    "content": "AI can escalate to a human rep, transfer leads, or handle complex questions when necessary."
+  },
+  {
+    "type": "info",
+    "tags": ["🟡", "🔵", "🟠"],
+    "keywords": [
+      "CRM", "proprietary", "quality control", "seamless automation", "system integration"
+    ],
+    "content": "CRM is proprietary to ensure quality control and seamless automation."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🟡", "🔍"],
+    "keywords": [
+      "AI", "lead management", "inbound leads", "outbound leads", "segment follow-up", "lead source", "industry segmentation", "interest-based segmentation", "invoices", "contracts", "payment links"
+    ],
+    "content": "AI manages inbound and outbound leads, segments follow-up by source, industry, and interest, and sends invoices, contracts, and payment links as required."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🟡"],
+    "keywords": [
+      "upselling", "cross-selling", "alternative solutions", "previous interactions", "sales opportunities"
+    ],
+    "content": "Upselling, cross-selling, and presenting alternative solutions is possible based on previous interactions."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "security protocols", "compliance standards", "data protection", "privacy", "AI"
+    ],
+    "content": "Security protocols and compliance standards are followed at all times."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🎯"],
+    "keywords": [
+      "no setup fees", "no upfront charges", "monthly subscription", "pricing simplicity"
+    ],
+    "content": "No setup fees or upfront charges; service is monthly subscription."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡"],
+    "keywords": [
+      "onboarding", "client setup", "24–48 hours", "managed onboarding"
+    ],
+    "content": "Onboarding is handled for the client, with setup completed within 24–48 hours."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🟡", "🔍"],
+    "keywords": [
+      "AI", "reschedule appointments", "time zone detection", "urgency-based messages", "booking workflows", "industry adaptation", "lead intent"
+    ],
+    "content": "AI can reschedule appointments, detect time zones, send urgency-based messages, and handle different booking workflows based on industry and lead intent."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔵", "🟠"],
+    "keywords": [
+      "improved appointment rates", "conversion rates", "reduced no-shows", "lower cost per lead", "manual follow-up", "comparison"
+    ],
+    "content": "Businesses see improved appointment rates, conversion rates, reduced no-shows, and lower cost per lead compared to traditional manual follow-up."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI", "continuous monitoring", "response improvement", "retraining", "ongoing optimization"
+    ],
+    "content": "AI continuously monitors and improves responses and can be retrained or updated as needed for ongoing optimization."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🔍"],
+    "keywords": [
+      "AI", "fake leads", "qualification", "scoring prospects", "objection handling", "price", "timing", "skepticism", "decision authority"
+    ],
+    "content": "AI filters out fake leads, qualifies and scores prospects, and handles all objections around price, timing, skepticism, and decision-making authority."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🟡"],
+    "keywords": [
+      "clients", "detailed analytics", "instant notifications", "important lead events"
+    ],
+    "content": "Clients receive detailed analytics and instant notifications on all important lead events."
+  },
+  {
+    "type": "info",
+    "tags": ["🟡", "🔵", "🟠", "🔍"],
+    "keywords": [
+      "solution", "business model", "lead generation", "nurturing", "follow-up", "booking", "verticals", "adaptability"
+    ],
+    "content": "Solution is suitable for any business model that depends on lead generation, nurturing, follow-up, and booking, and is adaptable to all common verticals."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "AI", "multilingual", "client data", "security", "compliance protocols"
+    ],
+    "content": "AI supports multilingual conversations; all client data is protected by strict security and compliance protocols."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡", "🎯"],
+    "keywords": [
+      "solution automation", "lead management", "engagement", "qualification", "nurturing", "booking", "rescheduling", "follow-up", "conversion", "no missed opportunities"
+    ],
+    "content": "Solution automates every part of lead management, engagement, qualification, nurturing, booking, rescheduling, and follow-up, ensuring no opportunity is lost and every lead is engaged until ready to convert."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🎯"],
+    "keywords": [
+      "no down payments", "no upfront setup fees"
+    ],
+    "content": "No down payments or upfront setup fees."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🎯"],
+    "keywords": [
+      "simple monthly subscription", "flexible pricing", "start any time", "stop any time"
+    ],
+    "content": "Simple monthly subscription; start or stop at any time."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🕓", "🔵"],
+    "keywords": [
+      "faster lead response times", "higher booking rates", "qualified calls", "automation"
+    ],
+    "content": "Faster lead response times, higher booking rates, and more qualified calls—all without lifting a finger."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🔵", "🟠"],
+    "keywords": [
+      "AI", "instant follow-up", "lead engagement", "automatic booking", "speed"
+    ],
+    "content": "AI follows up within seconds of opt-in, engages persistently, and books appointments automatically."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🕓"],
+    "keywords": [
+      "conversion rates boost", "first 1–2 weeks", "quick results", "automation benefits"
+    ],
+    "content": "Boost in conversion rates within the first 1–2 weeks."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🟡"],
+    "keywords": [
+      "AI", "24/7 sales rep", "cost efficiency", "human replacement"
+    ],
+    "content": "AI operates as a 24/7 sales rep at a fraction of the cost of a human."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯"],
+    "keywords": [
+      "AI", "instant responses", "relentless follow-up", "no forgotten leads", "automation"
+    ],
+    "content": "AI responds instantly, follows up relentlessly, never forgets a lead."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🎯"],
+    "keywords": [
+      "AI", "works alongside closers", "pre-qualified prospects", "engaged prospects", "handoff"
+    ],
+    "content": "Works alongside closers, ensuring only pre-qualified, engaged prospects are passed through."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "AI", "overcome objections", "price hesitations", "timing concerns", "skepticism", "prospect engagement", "natural conversations", "booking guidance"
+    ],
+    "content": "AI overcomes common objections like price hesitations, timing concerns, and skepticism, engaging prospects in natural, intelligent conversations, nurturing, and guiding toward booking."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯"],
+    "keywords": [
+      "AI", "lead qualification", "prospect screening", "appointment scheduling", "right prospects"
+    ],
+    "content": "AI qualifies leads before scheduling; only the right prospects reach you."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯", "🔵"],
+    "keywords": [
+      "AI", "re-engage old leads", "cold leads", "unresponsive leads", "pipeline", "strategic follow-ups", "objection-based messaging", "lead nurturing"
+    ],
+    "content": "AI re-engages old, cold, or unresponsive leads, bringing them back into the pipeline with strategic follow-ups; handles objection-based messaging and nurtures leads until they’re ready to book."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵"],
+    "keywords": [
+      "hands-off solution", "automated engagement", "qualification", "follow-ups", "scheduling"
+    ],
+    "content": "Hands-off solution that automates lead engagement, qualification, follow-ups, and scheduling."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🔵", "🟠"],
+    "keywords": [
+      "sales team", "high-intent prospects", "ready-to-buy", "qualified conversations"
+    ],
+    "content": "Sales team only speaks with high-intent, ready-to-buy prospects."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵"],
+    "keywords": [
+      "manual follow-ups", "chasing leads", "appointment scheduling", "time saving", "automation"
+    ],
+    "content": "Eliminates manual follow-ups, chasing leads, and appointment scheduling, saving 10–20+ hours per week."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵"],
+    "keywords": [
+      "AI", "repetitive work", "focus on closing", "team productivity"
+    ],
+    "content": "AI handles repetitive work so the team can focus on closing deals."
+  },
+  {
+    "type": "info",
+    "tags": ["🟡", "🔵", "🟠", "🔍"],
+    "keywords": [
+      "system", "any industry", "lead generation", "nurturing", "booked appointments", "coaching", "real estate", "home services", "high-ticket sales", "B2B services", "industry agnostic"
+    ],
+    "content": "System supports any industry that relies on lead generation, nurturing, and booked appointments—including coaching, real estate, home services, high-ticket sales, and B2B services."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡"],
+    "keywords": [
+      "AI", "business adaptation", "lead response", "top-performing setter", "customization"
+    ],
+    "content": "AI adapts to your business, responding to leads as a top-performing setter."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🟡", "🔵"],
+    "keywords": [
+      "setup", "customization", "integration", "24–48 hours", "personalized AI", "business-specific training"
+    ],
+    "content": "Setup, customization, and integration completed in 24–48 hours; personalized AI trained specifically for your business."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔵"],
+    "keywords": [
+      "continuous optimization", "AI performance tracking", "expert support", "AI interactions", "response monitoring", "conversion optimization"
+    ],
+    "content": "Continuous optimization, AI performance tracking, and expert support provided; AI interactions monitored, responses tweaked, and conversion maintained at the highest level."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯"],
+    "keywords": [
+      "pricing", "automation", "AI engagement", "ROI", "first month"
+    ],
+    "content": "Pricing depends on automation and AI engagement; most businesses see ROI within the first month."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔵"],
+    "keywords": [
+      "increased response rates", "booked calls", "streamlined sales", "guaranteed results", "continuous support"
+    ],
+    "content": "Increased response rates, booked calls, and streamlined sales guaranteed; continuous support until results are achieved."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🔵", "🎯"],
+    "keywords": [
+      "AI", "lead engagement", "instant engagement", "persistent follow-up", "qualified prospects", "booking", "delay removal"
+    ],
+    "content": "AI engages leads instantly, follows up persistently, and qualifies prospects before booking a call, removing delays and ensuring high-intent prospects only."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵"],
+    "keywords": [
+      "AI", "lead qualification", "appointment booking", "closing low-ticket sales", "setter for high-ticket", "handoff to closers"
+    ],
+    "content": "AI handles lead qualification, appointment booking, and closing low-ticket sales; acts as a setter for high-ticket offers before passing leads to human closers."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🕓"],
+    "keywords": [
+      "follow-up", "Facebook leads", "5 minutes", "improve response", "booking rates"
+    ],
+    "content": "Follow-up with Facebook leads occurs within 5 minutes to improve response and booking rates."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🎯", "🕓"],
+    "keywords": [
+      "AI texting agent", "lead engagement", "follow-up", "FAQ answers", "appointment booking"
+    ],
+    "content": "AI texting agent engages leads, follows up, answers FAQs, and books appointments."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🎯", "🔍"],
+    "keywords": [
+      "AI calling agent", "qualify leads", "handle objections", "set appointments", "close low-ticket sales"
+    ],
+    "content": "AI calling agent qualifies leads, handles objections, and sets appointments or closes low-ticket sales."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯"],
+    "keywords": [
+      "pre-qualification questions", "filter unqualified leads", "prospect screening", "appointment scheduling"
+    ],
+    "content": "Pre-qualification questions filter out unqualified leads before scheduling."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵", "🕓"],
+    "keywords": [
+      "AI", "never sleeps", "never misses follow-ups", "cost savings", "automated workload", "high-value conversations", "focus on closing deals"
+    ],
+    "content": "AI never sleeps, never misses follow-ups, costs a fraction of a human team, and automates the front-end workload so the team can focus on high-value conversations and closing deals."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "advanced NLP", "voice synthesis", "smooth conversations", "natural-sounding", "AI conversation quality"
+    ],
+    "content": "Advanced NLP and voice synthesis create smooth, natural-sounding conversations."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍", "🟡"],
+    "keywords": [
+      "AI verification methods", "qualification steps", "filter low-quality leads", "lead verification"
+    ],
+    "content": "AI verification methods require replies or additional qualification steps to filter out low-quality leads."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡"],
+    "keywords": [
+      "AI calling", "English", "Spanish", "French", "multilingual support"
+    ],
+    "content": "AI calling supports English, Spanish, French, and many other languages."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🕓"],
+    "keywords": [
+      "AI", "lead nurturing", "wasted ad spend prevention", "unresponsive prospects", "nurture strategy"
+    ],
+    "content": "AI nurtures every lead, preventing wasted ad spend on unresponsive prospects."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "AI objection handling", "price", "timing", "skepticism", "prospect engagement"
+    ],
+    "content": "AI objection handling responds to concerns about pricing, timing, and skepticism, keeping prospects engaged."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI", "re-engage previous customers", "personalized messages", "offers", "reminders"
+    ],
+    "content": "AI re-engages previous customers with personalized messages, offers, and reminders."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🔵"],
+    "keywords": [
+      "complex questions", "escalation", "human agent", "AI escalation"
+    ],
+    "content": "Complex questions are escalated to a human agent."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🟡"],
+    "keywords": [
+      "AI", "call transfers", "text transfers", "CRM notifications", "handoff to human reps"
+    ],
+    "content": "AI transfers calls, texts, or CRM notifications to human reps as needed."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡", "🔍"],
+    "keywords": [
+      "inbound calls", "qualification", "appointment booking", "AI", "automation"
+    ],
+    "content": "Inbound calls, questions, qualification, and appointment booking are handled by AI."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🟡"],
+    "keywords": [
+      "AI", "instant routing", "human rep", "SMS", "call", "CRM notification"
+    ],
+    "content": "AI can instantly route conversations to a human rep via SMS, call, or CRM notification."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🎯", "🕓"],
+    "keywords": [
+      "AI follow-up strategy", "SMS", "voice engagement", "multi-channel support"
+    ],
+    "content": "AI follow-up strategy combines SMS and voice engagement for seamless, multi-channel support."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI", "pre-recorded voicemails", "dynamically generated voicemails", "re-engage leads"
+    ],
+    "content": "AI can send pre-recorded or dynamically generated voicemails to re-engage leads."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "AI scripts", "customization", "variables", "name", "service interest", "past interactions"
+    ],
+    "content": "AI scripts fully customizable with variables such as name, service interest, and past interactions."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵", "🕓"],
+    "keywords": [
+      "AI", "immediate follow-up", "opt-in", "nurturing", "SMS", "calls", "maximize conversions"
+    ],
+    "content": "AI follows up with leads immediately after opt-in, nurturing via SMS and calls to maximize conversions."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "cost per lead", "industry variance", "AI", "acquisition cost", "conversion rates"
+    ],
+    "content": "Cost per lead varies by industry; AI reduces acquisition cost by improving lead-to-call conversion rates."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵"],
+    "keywords": [
+      "AI", "nurtures prospects", "booking", "purchase", "lead management", "pipeline management"
+    ],
+    "content": "AI nurtures prospects until booking occurs or a purchase is made, ensuring no lead is left behind."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🕓"],
+    "keywords": [
+      "cold leads", "revival", "new offers", "follow-up sequences"
+    ],
+    "content": "Cold leads can be revived with new offers or follow-up sequences."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔵", "🔍"],
+    "keywords": [
+      "AI", "tracks responses", "booking rates", "conversion rates", "ad performance", "optimization"
+    ],
+    "content": "AI tracks lead responses, booking rates, and conversion rates to optimize ad performance."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯", "🔵"],
+    "keywords": [
+      "WOCCA method", "Who", "Offer", "Copy", "Creatives", "Action", "optimization", "audience targeting", "high-converting deal", "persuasive messaging", "engaging visuals", "optimized funnel"
+    ],
+    "content": "WOCCA method optimizes: Who (audience targeting), Offer (high-converting deal), Copy (persuasive messaging), Creatives (engaging visuals), Action (optimized funnel)."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🕓"],
+    "keywords": [
+      "no-shows reduced", "appointment rates increased", "lead engagement", "profitable scaling", "AI optimization"
+    ],
+    "content": "No-shows reduced, appointment rates increased, and lead engagement improved for profitable scaling."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "AI follow-up", "multiple touchpoints", "SMS", "voice", "email"
+    ],
+    "content": "AI follows up across multiple touchpoints using SMS, voice, and email."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🔍"],
+    "keywords": [
+      "Google Calendar integration", "Outlook integration", "GoHighLevel integration", "AI", "scheduling platforms"
+    ],
+    "content": "Google Calendar, Outlook, GoHighLevel, and other scheduling platforms integrated with AI."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🔵"],
+    "keywords": [
+      "AI", "rescheduling requests", "no-shows", "cancellations", "attendance management"
+    ],
+    "content": "AI handles rescheduling requests, reducing no-shows and cancellations."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "reminders", "confirmations", "follow-up messages", "attendance rates"
+    ],
+    "content": "Reminders, confirmations, and follow-up messages sent to ensure attendance rates remain high."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍"],
+    "keywords": [
+      "double booking prevention", "calendar syncing", "group calls", "webinars", "scheduling management"
+    ],
+    "content": "Double bookings prevented by syncing with live calendar availability. Group calls, webinars, and live events scheduled based on availability."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "compliance", "data privacy", "telemarketing", "healthcare", "TCPA", "GDPR", "HIPAA"
+    ],
+    "content": "AI meets compliance standards for data privacy, telemarketing, and healthcare (TCPA, GDPR, HIPAA)."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "security protocols", "encryption", "compliance", "data protection"
+    ],
+    "content": "Strict security protocols, encryption, and compliance followed for all data."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🟡"],
+    "keywords": [
+      "AI", "disengagement detection", "communication management", "re-engagement", "follow-up scheduling"
+    ],
+    "content": "AI detects disengagement and either stops communication, schedules follow-up for a later date, or attempts re-engagement from a new angle."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🕓"],
+    "keywords": [
+      "AI", "fast deployment", "24–48 hours", "quick start", "business onboarding"
+    ],
+    "content": "AI running within 24–48 hours for most businesses."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI", "continuous improvement", "real-time learning", "engagement tracking", "response refinement"
+    ],
+    "content": "AI improves continuously through real-time learning, engagement tracking, and response refinement."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯"],
+    "keywords": [
+      "AI", "message analysis", "call analysis", "sentiment detection", "keyword analysis", "interest level"
+    ],
+    "content": "AI analyzes messages and calls using sentiment detection and keyword analysis to determine interest level."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯"],
+    "keywords": [
+      "AI", "FAQs", "troubleshooting", "appointment rescheduling", "billing inquiries"
+    ],
+    "content": "AI handles FAQs, troubleshooting, appointment rescheduling, and billing inquiries."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯"],
+    "keywords": [
+      "pre-qualification", "team focus", "serious prospects", "screening"
+    ],
+    "content": "Pre-qualification ensures team only speaks with serious prospects."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯", "🕓"],
+    "keywords": [
+      "AI-powered system", "lead engagement automation", "follow-up automation", "qualification", "appointment booking", "texting", "calling", "no unattended leads"
+    ],
+    "content": "AI-powered system automates lead engagement, follow-up, qualification, and appointment booking via texting and calling to ensure no lead is unattended."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯"],
+    "keywords": [
+      "AI vs agencies", "automatic follow-up", "qualification", "booking", "eliminate manual outreach"
+    ],
+    "content": "Unlike traditional agencies, AI follows up, qualifies, and books leads automatically, eliminating manual outreach."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯"],
+    "keywords": [
+      "AI", "initial engagement", "qualification", "booking", "high-ticket sales", "sales team", "closing"
+    ],
+    "content": "AI can handle initial engagement, qualification, and booking; high-ticket sales may still require a sales team to close."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "AI", "instant outreach", "lead opt-in", "engagement", "conversion rates"
+    ],
+    "content": "AI reaches out within seconds of a lead opting in, increasing engagement and conversion rates."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🟡"],
+    "keywords": [
+      "AI", "natural conversations", "personalized", "human-like engagement"
+    ],
+    "content": "AI conversations are natural and personalized, designed to engage like a human rep."
+  },
+  {
+    "type": "info",
+    "tags": ["🟡", "🔵", "🟠"],
+    "keywords": [
+      "system", "industry-agnostic", "lead generation", "follow-up", "booking"
+    ],
+    "content": "System is industry-agnostic, functioning for any business needing lead generation, follow-up, and booking."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "AI", "objection handling", "lead engagement", "nurturing"
+    ],
+    "content": "AI trained to handle objections and keep leads engaged."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🟡", "🔍"],
+    "keywords": [
+      "responses", "industry tailoring", "offer tailoring", "sales strategy adaptation"
+    ],
+    "content": "Responses tailored by industry, offer, and sales strategy."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🟡"],
+    "keywords": [
+      "demo setup", "onboarding process", "customization", "business needs"
+    ],
+    "content": "Demo setup and onboarding process customized to business needs."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🟡", "🎯"],
+    "keywords": [
+      "AI", "qualified leads transfer", "sales team", "call scheduling"
+    ],
+    "content": "AI seamlessly transfers qualified leads to sales team or enables call scheduling."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯", "🟡"],
+    "keywords": [
+      "AI", "FAQ answers", "support tickets", "escalate complex issues", "human agents"
+    ],
+    "content": "AI answers FAQs, handles support tickets, and escalates complex issues to human agents."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "24/7 follow-up", "engagement", "no missed opportunities"
+    ],
+    "content": "24/7 follow-up and engagement ensures no missed opportunities."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🟡"],
+    "keywords": [
+      "structured workflows", "messaging management", "lead opt-out", "sequence end"
+    ],
+    "content": "Structured workflows determine when AI stops messaging (lead opt-out or sequence end)."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯"],
+    "keywords": [
+      "AI follow-up", "no-shows", "canceled leads", "rescheduling", "engagement retention"
+    ],
+    "content": "AI follows up with no-show and canceled leads, rescheduling and keeping them engaged."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🕓", "🎯", "🟡"],
+    "keywords": [
+      "persistent engagement", "soft follow-ups", "case studies", "insights", "hesitant leads"
+    ],
+    "content": "Persistent engagement maintained with soft follow-ups, case studies, and insights for hesitant leads."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯"],
+    "keywords": [
+      "qualification questions", "help needed", "budget", "timeline", "decision-maker status"
+    ],
+    "content": "Qualification questions include: what help is needed, budget, timeline, and decision-maker status."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "long-term follow-up", "nurture sequences", "readiness"
+    ],
+    "content": "Long-term follow-up sequences nurture leads until ready."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯"],
+    "keywords": [
+      "qualified leads", "calendar scheduling", "availability"
+    ],
+    "content": "Qualified leads scheduled into calendar based on availability."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "outbound calling", "lead qualification", "appointment booking"
+    ],
+    "content": "Outbound calling for lead qualification and appointment booking."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "multi-channel outreach", "persistence", "response management"
+    ],
+    "content": "Multi-channel outreach persists until response received."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "automated reminders", "rescheduling options", "no-shows reduction"
+    ],
+    "content": "Automated reminders and rescheduling options reduce no-shows."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "old leads", "database revival", "re-engagement"
+    ],
+    "content": "Old leads revived from database and re-engaged."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠", "🎯"],
+    "keywords": [
+      "conversation data", "lead qualification review", "call prep"
+    ],
+    "content": "Conversation data recorded; lead qualification can be reviewed prior to calls."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯"],
+    "keywords": [
+      "invoices", "direct payment links", "text", "email"
+    ],
+    "content": "Invoices and direct payment links sent via text or email."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🕓"],
+    "keywords": [
+      "reminders before appointments", "follow-ups after appointments", "maximize engagement", "conversions"
+    ],
+    "content": "Reminders sent before and follow-ups after appointments maximize engagement and conversions."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🕓"],
+    "keywords": [
+      "canceled appointments", "automated reschedule", "nurturing"
+    ],
+    "content": "Canceled appointments trigger automated reschedule and nurturing."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯"],
+    "keywords": [
+      "upselling", "identified opportunities", "previous interactions", "preferences"
+    ],
+    "content": "Upselling opportunities identified based on previous interactions and preferences."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯"],
+    "keywords": [
+      "alternative solutions", "ROI benefits", "success stories", "price concerns", "overcome objections"
+    ],
+    "content": "Alternative solutions, ROI benefits, and success stories presented to overcome price concerns."
+  },
+  {
+    "type": "info",
+    "tags": ["🔵", "🟠", "🎯", "🔍"],
+    "keywords": [
+      "direct CRM calendar scheduling", "back-and-forth elimination", "Google Calendar", "scheduling integration"
+    ],
+    "content": "Direct CRM calendar scheduling eliminates back-and-forth, syncing with Google and others."
+  },
+  {
+    "type": "info",
+    "tags": ["🕓", "🟠", "🎯"],
+    "keywords": [
+      "no-shows", "follow-up", "smart tags", "cancellation tracking"
+    ],
+    "content": "No-shows followed up, smart tags applied to track cancellations."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "available time slots", "rescheduling", "confirmation"
+    ],
+    "content": "Available time slots offered for rescheduling, with confirmation of new times."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍", "🎯"],
+    "keywords": [
+      "scheduling tools", "CRMs", "integration", "management"
+    ],
+    "content": "Popular scheduling tools and CRMs integrated for seamless management."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯", "🔍"],
+    "keywords": [
+      "time zone detection", "adjustment", "accurate scheduling"
+    ],
+    "content": "Time zone detection and adjustment for accurate scheduling."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🎯"],
+    "keywords": [
+      "urgency-based messages", "expiring offers", "limited-time deals"
+    ],
+    "content": "Urgency-based messages sent for expiring offers or limited-time deals."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🕓"],
+    "keywords": [
+      "instant alerts", "high-intent criteria", "lead notification"
+    ],
+    "content": "Instant alerts sent when lead meets high-intent criteria."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔵"],
+    "keywords": [
+      "booked appointments", "increased appointments", "no-shows decrease", "conversion rates rise", "automated follow-up"
+    ],
+    "content": "Booked appointments increase, no-shows decrease, conversion rates rise, and follow-up is fully automated."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🕓"],
+    "keywords": [
+      "engagement", "appointment bookings", "first 30 days", "performance improvement"
+    ],
+    "content": "Engagement and appointment bookings increase within first 30 days."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🕓"],
+    "keywords": [
+      "response rates", "improvement", "manual follow-ups comparison", "3–5x better"
+    ],
+    "content": "Response rates improve 3–5x compared to manual follow-ups."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠"],
+    "keywords": [
+      "conversion efficiency", "improvement", "lead acquisition cost reduction"
+    ],
+    "content": "Conversion efficiency improves, reducing overall lead acquisition cost."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🟡", "🎯"],
+    "keywords": [
+      "pilot programs", "run before implementation", "testing"
+    ],
+    "content": "Pilot programs can be run before full implementation."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍", "🎯"],
+    "keywords": [
+      "timing", "messaging", "outreach frequency", "adjustability", "preferences"
+    ],
+    "content": "Timing, messaging, and outreach frequency adjustable to preferences."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠"],
+    "keywords": [
+      "AI", "scheduling conflicts prevention", "real-time availability syncing"
+    ],
+    "content": "AI prevents scheduling conflicts by syncing with real-time availability."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔍"],
+    "keywords": [
+      "engagement tracking", "detailed analytics", "responses", "bookings", "conversions"
+    ],
+    "content": "Engagement tracked in detail; analytics provided on responses, bookings, and conversions."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍"],
+    "keywords": [
+      "scripts", "editability", "strategy alignment"
+    ],
+    "content": "Scripts can be edited anytime to align with strategy."
+  },
+  {
+    "type": "info",
+    "tags": ["🎯", "🟠", "🔵"],
+    "keywords": [
+      "high-intent leads", "paid ads", "aggressive follow-up", "maximize ROI"
+    ],
+    "content": "High-intent leads from paid ads prioritized for aggressive follow-up to maximize ROI."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍"],
+    "keywords": [
+      "follow-up customization", "lead source", "industry", "interest level"
+    ],
+    "content": "Follow-up customized by lead source, industry, and interest level."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔵", "🔍", "🟡"],
+    "keywords": [
+      "knowledge base", "tailoring", "offer understanding", "objection handling", "selling points"
+    ],
+    "content": "Knowledge base tailored to the business ensures understanding of offer, objections, and selling points."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟠"],
+    "keywords": [
+      "multilingual conversations", "prospect preference adaptation"
+    ],
+    "content": "Multilingual conversations supported, adapting to prospect preference."
+  },
+  {
+    "type": "info",
+    "tags": ["🔍", "🟡"],
+    "keywords": [
+      "data security", "sensitive information", "privacy", "AI"
+    ],
+    "content": "Strict data security ensures sensitive information is never stored."
+  },
+  {
+    "type": "info",
+    "tags": ["🟠", "🔍", "🟡"],
+    "keywords": [
+      "scripts customization", "regulatory compliance"
+    ],
+    "content": "Scripts customized for regulatory compliance."
   }
 ]
