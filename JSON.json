@@ -1,5 +1,4 @@
 [
-  // =================== NEPQ SKILLS: OPTIN STAGE ===================
   {
     "type": "skill",
     "stage": "optin",
@@ -102,7 +101,6 @@
       ]
     }
   },
-  // =================== NEPQ SKILLS: NOSHOW STAGE ===================
   {
     "type": "skill",
     "stage": "noshow",
@@ -205,7 +203,6 @@
       ]
     }
   },
-  // =================== NEPQ SKILLS: FOLLOWUP STAGE ===================
   {
     "type": "skill",
     "stage": "followup",
@@ -308,7 +305,6 @@
       ]
     }
   },
-  // =================== UNIVERSAL "ANY STAGE" SOFTENER/SUPPORT SKILLS ===================
   {
     "type": "skill",
     "stage": "any",
@@ -467,8 +463,6 @@
       ]
     }
   },
-
-  // =================== OBJECTION HANDLING, RULES, EXAMPLES, AVOIDS ===================
   {
     "type": "rule",
     "id": "objection_handling_logic",
@@ -587,52 +581,6 @@
       }
     }
   },
-
-  // =================== BUSINESS INFO (Core/Supporting/Background) ===================
-  {
-    "type": "info",
-    "id": "core",
-    "tag": "🔵",
-    "content": "Our program helps businesses automate lead follow-up, nurture, and booking using AI-powered workflows. Clients see 2–4x higher booking rates and faster response times."
-  },
-  {
-    "type": "info",
-    "id": "guarantee",
-    "tag": "🔵",
-    "content": "We guarantee you’ll see at least a 2x increase in booked calls—or we’ll work for free until you do."
-  },
-  {
-    "type": "info",
-    "id": "proof",
-    "tag": "🔵",
-    "content": "We’ve helped 200+ service businesses and agencies go from manual chasing to automated, 24/7 follow-up—with 100+ testimonials to prove it."
-  },
-  {
-    "type": "info",
-    "id": "pricing_detail",
-    "tag": "🟠",
-    "content": "Pricing is performance-based, with most clients paying only after results. No long-term contracts or hidden fees."
-  },
-  {
-    "type": "info",
-    "id": "platforms",
-    "tag": "🟠",
-    "content": "Works natively with GoHighLevel, Zapier, and all major CRMs—fully white-label and ready for agencies."
-  },
-  {
-    "type": "info",
-    "id": "security",
-    "tag": "🟡",
-    "content": "Data is processed on US/EU-based servers with full encryption, compliance, and strict privacy policies for all clients and leads."
-  },
-  {
-    "type": "info",
-    "id": "background",
-    "tag": "🟡",
-    "content": "Our founders scaled multiple agencies and SaaS products—now we help others automate their pipelines and double their revenue with less effort."
-  },
-
-  // =================== OBJECTIVES (Per Stage) ===================
   {
     "type": "objective",
     "stage": "optin",
@@ -717,8 +665,6 @@
     "order": 5,
     "content": "Title: Fallback: Check-In & Pause\nShort Description: If the lead hasn’t replied after value or deep-dive responses — or gives unclear signals — send one final check-in that leaves space without pressure.\nExtra Prompt: Use only if the lead has disengaged or responded vaguely multiple times without follow-up. Send a soft, one-time message to check in and offer to revisit when the timing is right. Avoid repeating CTAs.\nSettings: GATHER"
   },
-
-  // =================== MACRO PROMPTS (Per Stage) ===================
   {
     "type": "macro_prompt",
     "stage": "opt_in",
