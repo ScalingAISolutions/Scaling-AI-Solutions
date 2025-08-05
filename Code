@@ -1,0 +1,456 @@
+let payload = input;
+
+const CONFIG = {
+  maxTokensByStage: {
+    optin:    [900, 1200, 1500, 1700],
+    booked:   [1100, 1400, 1700, 2700],
+    noshow:   [1100, 1400, 1700, 2700],
+    followup: [1300, 1600, 2000, 3000]
+  },
+  maxTokens: 1700,
+  businessInfoTags: ["🔵", "🟠", "🟡"],
+  minInclude: {
+    macro_prompt: 1,
+    objective: 1
+  }
+};
+
+function estimateTokens(text) {
+  return Math.ceil((text || "").length / 3.75);
+}
+function fuzzyIncludes(text = "", keyword = "") {
+  const lowerText = (text + "").toLowerCase();
+  const lowerKey = (keyword + "").toLowerCase();
+  return lowerText.includes(lowerKey) || lowerKey.includes(lowerText);
+}
+function normalizeStage(stage) {
+  const s = (stage || "").toLowerCase();
+  if (["opt_in", "optin"].includes(s)) return "optin";
+  if (["no_show", "noshow"].includes(s)) return "noshow";
+  if (["follow_up", "followup"].includes(s)) return "followup";
+  if (["booked"].includes(s)) return "booked";
+  return s;
+}
+function tryParseJSON(raw, debugObj, label = "") {
+  try {
+    return typeof raw === "string" ? JSON.parse(raw) : raw;
+  } catch (err) {
+    debugObj.errors = debugObj.errors || [];
+    debugObj.errors.push({ label, err: err + "", time: new Date().toISOString() });
+    return [];
+  }
+}
+function checkChunkFields(chunk, required, debugObj, label = "") {
+  let missing = [];
+  required.forEach(f => { if (chunk[f] === undefined) missing.push(f); });
+  if (missing.length) {
+    debugObj.field_warnings = debugObj.field_warnings || [];
+    debugObj.field_warnings.push({ chunk, missing, label, time: new Date().toISOString() });
+  }
+  return missing.length === 0;
+}
+function validateJSONSchema(allChunks, debugObj) {
+  allChunks.forEach((c, idx) => {
+    checkChunkFields(c, ["type"], debugObj, "validateJSONSchema-" + idx);
+  });
+}
+function detectIntentAndTone(msg = "") {
+  const t = msg.toLowerCase();
+  if (/price|cost|how much|investment/.test(t)) return { intent: "pricing_objection", tone: "price" };
+  if (/book|schedule|calendar|call|appointment|demo/.test(t)) return { intent: "link_booking", tone: "booking" };
+  if (/link|video|testimonials?|checkout|details?/.test(t)) return { intent: "link_request", tone: "curiosity" };
+  if (/objection|problem|issue|concern|pushback|hesitant|not sure|stall/.test(t)) return { intent: "objection", tone: "hesitant" };
+  if (/how|explain|clarify|what is|details?/.test(t)) return { intent: "curiosity", tone: "curiosity" };
+  if (/overview|objective|step|what's next|process/.test(t)) return { intent: "objective", tone: "general" };
+  return { intent: "general", tone: "general" };
+}
+function capByTokens(chunks, maxTokens) {
+  let selected = [], total = 0;
+  for (let chunk of chunks) {
+    const raw = (chunk.content?.tactics || "") +
+      (chunk.content?.examples ? chunk.content.examples.join("\n") : "") +
+      (chunk.content || "");
+    const tokens = estimateTokens(raw);
+    chunk._tokens = tokens;
+    if (total + tokens > maxTokens) break;
+    selected.push(chunk);
+    total += tokens;
+  }
+  return selected;
+}
+function logQA(debugObj, msg, obj) {
+  debugObj.logs = debugObj.logs || [];
+  debugObj.logs.push({ msg, obj, time: new Date().toISOString() });
+}
+function isRecentlySent(chunk, dataStore, N = 3, M = 30) {
+  let id = chunk.id || chunk.order || JSON.stringify(chunk.content).slice(0,24);
+  const prevChunks = dataStore?.prev_chunks || [];
+  const chunkTimes = dataStore?.chunk_last_sent_times || {};
+  const now = Date.now();
+  let lastIdx = prevChunks.lastIndexOf(id);
+  let byN = lastIdx !== -1 && prevChunks.length - lastIdx <= N;
+  let byTime = chunkTimes[id] && (now - new Date(chunkTimes[id]).getTime()) < M * 60 * 1000;
+  return byN || byTime;
+}
+function applyMemoryDrivenScoring(chunks, memoryVars, debugObj, context) {
+  const { dataStore = {}, previous_order, stage, contextMsg } = memoryVars;
+  const objLog = [];
+  for (let chunk of chunks) {
+    let id = chunk.id || chunk.order || JSON.stringify(chunk.content).slice(0,24);
+    chunk._last_sent = dataStore?.chunk_last_sent_times?.[id] || null;
+    chunk._recently_sent = isRecentlySent(chunk, dataStore);
+    if (chunk._recently_sent) {
+      chunk._score = (chunk._score || 0) - 15;
+      objLog.push({ id, reason: "recently_sent", penalty: -15 });
+    }
+    if (normalizeStage(chunk.stage) === stage && typeof chunk.order === "number" && Number(chunk.order) === Number(previous_order) + 1) {
+      chunk._score = (chunk._score || 0) + 3;
+      objLog.push({ id, reason: "next_in_sequence", bonus: 3 });
+    }
+    if (memoryVars.last_bot_response && chunk.content === memoryVars.last_bot_response) {
+      chunk._score = (chunk._score || 0) - 10;
+      objLog.push({ id, reason: "same_as_last_bot_response", penalty: -10 });
+    }
+    if (
+      (memoryVars.last_link_ready && chunk.type === "objective" && /link|book|schedule/i.test(chunk.content || "")) ||
+      (memoryVars.injected_link_key && (chunk.link_key === memoryVars.injected_link_key))
+    ) {
+      chunk._score = (chunk._score || 0) - 8;
+      objLog.push({ id, reason: "link_already_ready_or_injected", penalty: -8 });
+    }
+    if (chunk.type === "objective" && memoryVars.fallback_used) {
+      chunk._score = (chunk._score || 0) - 6;
+      objLog.push({ id, reason: "recent_fallback_used", penalty: -6 });
+    }
+    if (chunk.type === "objection" && Number(memoryVars.objection_reply_count || 0) > 3) {
+      chunk._score = (chunk._score || 0) + 7;
+      objLog.push({ id, reason: "escalated_objection_count", bonus: 7 });
+    }
+    if (
+      chunk.type === "objection" &&
+      (memoryVars.last_objection_mode !== memoryVars.prev_last_objection_mode ||
+       memoryVars.last_objection_lead !== memoryVars.prev_last_objection_lead)
+    ) {
+      chunk._score = (chunk._score || 0) + 5;
+      objLog.push({ id, reason: "new_objection_lead_mode", bonus: 5 });
+    }
+  }
+  debugObj.memory_driven_scoring = objLog;
+  return chunks;
+}
+function injectPendingCarryoverChunks(chunks, memoryVars, debugObj) {
+  const carryover = (memoryVars.dataStore?.pending_carryover || []).map(co => {
+    return { ...co, _score: 999, _pending_carryover: true };
+  });
+  debugObj.injected_pending_carryover = carryover.length ? carryover : undefined;
+  return [...carryover, ...chunks];
+}
+function updateMemoryAfterRun(outputChunks, memoryVars, now = new Date()) {
+  let sent_ids = outputChunks.map(c => c.id || c.order || JSON.stringify(c.content).slice(0,24));
+  let prev_chunks = (memoryVars.dataStore?.prev_chunks || []).concat(sent_ids);
+  let chunk_last_sent_times = { ...(memoryVars.dataStore?.chunk_last_sent_times || {}) };
+  sent_ids.forEach(id => { chunk_last_sent_times[id] = now.toISOString(); });
+  let pending_carryover = memoryVars.dataStore?.pending_carryover || [];
+  if (outputChunks.some(c => c._pending_carryover)) pending_carryover = [];
+  let last_sent_order = { ...(memoryVars.dataStore?.last_sent_order || {}) };
+  outputChunks.forEach(c => {
+    let s = normalizeStage(c.stage || memoryVars.stage);
+    if (typeof c.order === "number") {
+      last_sent_order[s] = Math.max(Number(last_sent_order[s] || 0), c.order);
+    }
+  });
+  return {
+    ...memoryVars.dataStore,
+    prev_chunks,
+    chunk_last_sent_times,
+    pending_carryover,
+    last_sent_order
+  };
+}
+function boostSupportingBackgroundInfo(chunks, stage, tokenCap, prevChunks, debugObj) {
+  let totalCoreTokens = chunks.filter(c => (c.tag || "").includes("🔵")).reduce((a,c)=>a+(c._tokens||0), 0);
+  let hasRecentSupportingOrBackground = (prevChunks || [])
+    .some(id => chunks.find(c => ((c.tag || "").includes("🟠") || (c.tag || "").includes("🟡")) && (c.id === id)));
+  let log = [];
+  for (let c of chunks) {
+    let isSupporting = (c.tag || "").includes("🟠");
+    let isBackground = (c.tag || "").includes("🟡");
+    let bonus = 0;
+    if ((stage === "optin" || stage === "noshow") && (isSupporting || isBackground)) bonus += 5;
+    if ((isSupporting || isBackground) && totalCoreTokens < tokenCap * 0.6) bonus += 4;
+    if ((isSupporting || isBackground) && !hasRecentSupportingOrBackground) bonus += 2;
+    if (bonus) {
+      c._score = (c._score || 0) + bonus;
+      log.push({ id: c.id, tag: c.tag, stage, totalCoreTokens, bonus, reason: "proactive 🟠/🟡 boost" });
+    }
+  }
+  debugObj.proactive_supporting_background_info_boost = log;
+  return chunks;
+}
+function businessInfoSelector({ allChunks, msg, stage, dataStore, debugObj, config, memoryVars }) {
+  let infoChunks = allChunks.filter(c => c.type === "business_info" || c.type === "info");
+  infoChunks = injectPendingCarryoverChunks(infoChunks, memoryVars, debugObj);
+
+  infoChunks.forEach(chunk => {
+    chunk._score = 0;
+    let tag = chunk.tag || "";
+    let content = (chunk.content || "") + JSON.stringify(chunk.content || "");
+    if (tag.includes("🔵")) chunk._score += 20;
+    if (tag.includes("🟠") && /clarif|detail|explain|not sure|uncertain/.test(msg)) chunk._score += 15;
+    if (tag.includes("🟡") && /background|history|story|why|validation/.test(msg)) chunk._score += 10;
+    if (/✨|🎯|🕓|🔍/.test(tag)) chunk._score += 2;
+    (chunk.keywords || []).forEach(k => { if (fuzzyIncludes(msg, k)) chunk._score += 3; });
+    if (normalizeStage(chunk.stage) === stage) chunk._score += 2;
+    if ((tag.match(/🔵|🟠|🟡/g) || []).length === 1) chunk._score += 2;
+    let alreadySent = (dataStore?.prev_chunks || []).includes(chunk.id);
+    if (alreadySent) chunk._score -= 15;
+    if (chunk.order) chunk._score += 0.2 * (10 - chunk.order);
+    checkChunkFields(chunk, ["content", "type"], debugObj, "businessInfoSelector");
+  });
+
+  applyMemoryDrivenScoring(infoChunks, memoryVars, debugObj, msg);
+  boostSupportingBackgroundInfo(infoChunks, stage, 3000, dataStore?.prev_chunks, debugObj);
+
+  let output = infoChunks.filter(c => c._score > 0).sort((a, b) => b._score - a._score);
+  output = capByTokens(output, 3000);
+  logQA(debugObj, "businessInfoSelector complete", output);
+  return output;
+}
+function genericSelector({ allChunks, msg, stage, type, dataStore, debugObj, config, alwaysInclude = false, memoryVars }) {
+  let chunks = allChunks.filter(c => c.type === type && (!c.stage || normalizeStage(c.stage) === stage));
+  chunks = injectPendingCarryoverChunks(chunks, memoryVars, debugObj);
+
+  chunks.forEach(chunk => {
+    chunk._score = 0;
+    (chunk.keywords || []).forEach(k => { if (fuzzyIncludes(msg, k)) chunk._score += 3; });
+    if (normalizeStage(chunk.stage) === stage) chunk._score += 2;
+    if (chunk.order) chunk._score += 0.2 * (10 - chunk.order);
+    let alreadySent = (dataStore?.prev_chunks || []).includes(chunk.id);
+    if (alreadySent) chunk._score -= 15;
+    checkChunkFields(chunk, ["content", "type"], debugObj, "genericSelector:" + type);
+  });
+
+  applyMemoryDrivenScoring(chunks, memoryVars, debugObj, msg);
+
+  let out = alwaysInclude && chunks.length ? [chunks.sort((a, b) => (b._score || 0) - (a._score || 0))[0]] :
+    chunks.filter(c => c._score > 0).sort((a, b) => (b._score || 0) - (a._score || 0));
+
+  out = capByTokens(out, 3000);
+  logQA(debugObj, `genericSelector for type: ${type} complete`, out);
+  return out;
+}
+function getComplexityScore(payload, memoryVars, debugObj) {
+  let { message = "", context = "", lead_stage, previous_order, objection_reply_count, fallback_used, last_link_ready } = payload;
+  let stage = normalizeStage(lead_stage);
+  let signals = [];
+  let complexity = 1;
+
+  if (fallback_used) { complexity = 1; signals.push("fallback_used"); }
+  if (Number(objection_reply_count) >= 2) { complexity = 2; signals.push("repeat_objections"); }
+  if (Number(objection_reply_count) >= 4) { complexity = 3; signals.push("multi_objections"); }
+  if (Number(previous_order) >= 5) { complexity = Math.max(complexity, 2); signals.push("deep_convo"); }
+  if (Number(previous_order) >= 10) { complexity = Math.max(complexity, 3); signals.push("very_deep_convo"); }
+  if ((message || "").length > 250) { complexity = Math.max(complexity, 3); signals.push("long_message"); }
+  if (stage === "followup" && (message || "").length > 150) { complexity = 4; signals.push("followup_complex"); }
+  if (last_link_ready) { complexity = Math.max(complexity, 3); signals.push("link_ready"); }
+  if (stage === "followup" && (Number(objection_reply_count) >= 5 || (message || "").length > 400)) {
+    complexity = 4; signals.push("super_complex_followup");
+  }
+  debugObj.complexity_signals = signals;
+  debugObj.complexity_score = complexity;
+  return complexity;
+}
+function dynamicLinkInjector(payload, allChunks, memoryVars, debugObj) {
+  let links = allChunks.filter(c => c.type === "link");
+  let msg = payload.message || "";
+  let injected = null;
+  let log = [];
+  for (let chunk of links) {
+    let key = chunk.content;
+    let url = payload[key];
+    let linkPurpose = (chunk.purpose || "").toLowerCase();
+    let alreadySent = memoryVars.injected_link_key === key;
+    let matches = false;
+    if (!alreadySent && url) {
+      if (/vsl/i.test(linkPurpose) && /how|what|explain|overview/.test(msg)) matches = true;
+      if (/testimonial/i.test(linkPurpose) && /proof|testimoni|review|success|worked/.test(msg)) matches = true;
+      if (/checkout/i.test(linkPurpose) && /(pay|ready|buy|sign|join|enroll|checkout)/.test(msg)) matches = true;
+      if (/booking|schedule|calendar/.test(linkPurpose) && /(call|next step|book|schedule|calendar|appointment)/.test(msg)) matches = true;
+      if (msg.toLowerCase().includes(key.toLowerCase())) matches = true;
+    }
+    if (matches && url && !alreadySent) {
+      injected = {
+        ...chunk,
+        content: url,
+        _link_key: key,
+        _original_content: chunk.content
+      };
+      log.push({
+        key, url, purpose: chunk.purpose, matched: true, reason: "contextual match",
+        used: true, time: new Date().toISOString()
+      });
+      break;
+    }
+    log.push({
+      key, url, purpose: chunk.purpose, matched: matches, reason: alreadySent ? "already_sent" : "no_context_match",
+      used: false, time: new Date().toISOString()
+    });
+  }
+  debugObj.link_injection_log = log;
+  if (injected) {
+    memoryVars.injected_link_key = injected._link_key;
+    memoryVars.last_link_ready = true;
+  }
+  return injected ? [injected] : [];
+}
+function manageConversationHistory(payload, memoryVars, debugObj) {
+  let { conversation_history = [], message, assistant_message, lead_stage, prev_stage } = payload;
+  let usedFirstMessageForContext = false;
+  let stageJustChanged = false;
+  let context = [];
+  lead_stage = normalizeStage(lead_stage);
+  prev_stage = normalizeStage(prev_stage);
+
+  stageJustChanged = lead_stage && prev_stage && (lead_stage !== prev_stage);
+  if (stageJustChanged || (conversation_history || []).length === 0) {
+    let firstMsg = ""; // Initialize firstMsg
+    if (lead_stage === "optin") {
+      firstMsg = payload.first_message_optin || payload.first_message_option || ""; // Handle the typo here
+    } else if (lead_stage === "booked") {
+      firstMsg = payload.first_message_booked || "";
+    } else if (lead_stage === "noshow") {
+      firstMsg = payload.first_message_noshow || "";
+    } else if (lead_stage === "followup") {
+      firstMsg = payload.first_message_followup || "";
+    }
+
+    if (firstMsg) {
+      context.push({ role: "system", content: firstMsg });
+      usedFirstMessageForContext = true;
+    }
+  }
+  if (message) context.push({ role: "user", content: message });
+  if (assistant_message) context.push({ role: "assistant", content: assistant_message });
+  let trimmed = context.slice(-15);
+  debugObj.usedFirstMessageForContext = usedFirstMessageForContext;
+  debugObj.stageJustChanged = stageJustChanged;
+  debugObj.conversation_history_length = trimmed.length;
+  return trimmed;
+}
+let debugObj = {};
+
+//let allChunks = tryParseJSON(payload.json || payload.skills || payload.objectives || [], debugObj, "masterSelector:allChunks");
+let allChunks = tryParseJSON(payload.data || payload.json || payload.skills || payload.objectives || [], debugObj, "masterSelector:allChunks");
+validateJSONSchema(allChunks, debugObj);
+
+let memoryVars = {
+  dataStore: payload.dataStore || {},
+  contact_id: payload.contact_id,
+  stage: normalizeStage(payload.lead_stage || payload.stage),
+  previous_order: payload.previous_order,
+  contextMsg: payload.context || "",
+  objection_reply_count: payload.objection_reply_count,
+  last_objection_mode: payload.last_objection_mode,
+  last_objection_lead: payload.last_objection_lead,
+  prev_last_objection_mode: payload.prev_last_objection_mode,
+  prev_last_objection_lead: payload.prev_last_objection_lead,
+  last_bot_response: payload.last_bot_response,
+  last_link_ready: payload.last_link_ready,
+  injected_link_key: payload.injected_link_key,
+  fallback_used: payload.fallback_used
+};
+
+let complexityScore = getComplexityScore(payload, memoryVars, debugObj);
+let stage = memoryVars.stage;
+let tokenCap =
+  CONFIG.maxTokensByStage?.[stage]?.[complexityScore - 1] ||
+  CONFIG.maxTokens;
+debugObj.tokenCap = tokenCap;
+
+let conversation_history = manageConversationHistory(payload, memoryVars, debugObj);
+
+let injectedLinks = dynamicLinkInjector(payload, allChunks, memoryVars, debugObj);
+
+let outputChunks = [];
+outputChunks = outputChunks.concat(
+  businessInfoSelector({
+    allChunks,
+    msg: payload.message || "",
+    stage,
+    dataStore: memoryVars.dataStore,
+    debugObj,
+    config: CONFIG,
+    memoryVars
+  })
+);
+outputChunks = outputChunks.concat(
+  genericSelector({
+    allChunks,
+    msg: payload.message || "",
+    stage,
+    type: "macro_prompt",
+    dataStore: memoryVars.dataStore,
+    debugObj,
+    config: CONFIG,
+    alwaysInclude: true,
+    memoryVars
+  })
+);
+outputChunks = outputChunks.concat(
+  genericSelector({
+    allChunks,
+    msg: payload.message || "",
+    stage,
+    type: "objective",
+    dataStore: memoryVars.dataStore,
+    debugObj,
+    config: CONFIG,
+    alwaysInclude: true,
+    memoryVars
+  })
+);
+["skill", "objection", "rule"].forEach(type =>
+  outputChunks.push(...genericSelector({
+    allChunks,
+    msg: payload.message || "",
+    stage,
+    type,
+    dataStore: memoryVars.dataStore,
+    debugObj,
+    config: CONFIG,
+    alwaysInclude: false,
+    memoryVars
+  }))
+);
+if (injectedLinks.length) outputChunks.unshift(...injectedLinks);
+
+let seen = new Set();
+outputChunks = outputChunks.filter(c => {
+  let id = c.id || c.order || JSON.stringify(c.content).slice(0,24);
+  if (seen.has(id)) return false;
+  seen.add(id); return true;
+}).sort((a, b) => (b._score || 0) - (a._score || 0));
+outputChunks = capByTokens(outputChunks, tokenCap);
+
+let updatedMemory = updateMemoryAfterRun(outputChunks, memoryVars);
+
+const RETURN_OBJECT_WITH_VARIABLES = true;
+
+if (RETURN_OBJECT_WITH_VARIABLES) {
+  return {
+    type_content: outputChunks.map(({ type, content }) => ({ type, content })),
+    debug: debugObj,
+    conversation_history,
+    stage,
+    complexityScore,
+    tokenCap,
+    injected_link_key: memoryVars.injected_link_key || "",
+    last_link_ready: memoryVars.last_link_ready || false,
+    updated_memory: updatedMemory,
+   contact_id: payload.contact_id|| "",
+   payload: payload|| ""
+  };
+} else {
+  return outputChunks.map(({ type, content }) => ({ type, content }));
+}
+
